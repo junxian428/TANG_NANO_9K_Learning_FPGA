@@ -46,3 +46,6 @@ File List:
 |        |-- vga_text_generator.sdc           	-->	SDC File
 |        |-- vga_text_generator.gao             -->     GAO File
 
+
+
+![image](https://user-images.githubusercontent.com/58724748/217454314-0eb3bdd0-f99f-40ca-a40c-c9589a868b31.png)
