@@ -1,0 +1,14 @@
+-d C:\Users\junxian428\Documents\vga_text_generator\impl\gwsynthesis\vga_text_generator.vg
+-p GW1N-9C-LQFP100-6
+-pn GW1N-LV9LQ100C6/I5
+-cst C:\Users\junxian428\Documents\vga_text_generator\src\vga_text_generator.cst
+-cfg C:\Users\junxian428\Documents\vga_text_generator\impl\pnr\device.cfg
+-sdc C:\Users\junxian428\Documents\vga_text_generator\src\vga_text_generator.sdc
+-gao C:\Users\junxian428\Documents\vga_text_generator\impl\gao\gao.v
+-gao_crc 1111000001101100
+-bit
+-tr
+-ph
+-timing
+-cst_error
+-route_maxfan 23

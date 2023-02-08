@@ -1,0 +1,31 @@
+Reading netlist file: "C:\Users\junxian428\Documents\vga_text_generator\impl\gwsynthesis\vga_text_generator.vg"
+Parsing netlist file "C:\Users\junxian428\Documents\vga_text_generator\impl\gwsynthesis\vga_text_generator.vg" completed
+Processing netlist completed
+Parsing netlist file "C:\Users\junxian428\Documents\vga_text_generator\impl\gao\gao.v" completed
+Processing netlist completed
+Reading constraint file: "C:\Users\junxian428\Documents\vga_text_generator\src\vga_text_generator.cst"
+Physical Constraint parsed completed
+Running placement......
+[10%] Placement Phase 0 completed
+[20%] Placement Phase 1 completed
+[30%] Placement Phase 2 completed
+[50%] Placement Phase 3 completed
+Running routing......
+[60%] Routing Phase 0 completed
+[70%] Routing Phase 1 completed
+[80%] Routing Phase 2 completed
+[90%] Routing Phase 3 completed
+Running timing analysis......
+[95%] Timing analysis completed
+Placement and routing completed
+Bitstream generation in progress......
+Bitstream generation completed
+Running power analysis......
+[100%] Power analysis completed
+Generate file "C:\Users\junxian428\Documents\vga_text_generator\impl\pnr\vga_text_generator.power.html" completed
+Generate file "C:\Users\junxian428\Documents\vga_text_generator\impl\pnr\vga_text_generator.pin.html" completed
+Generate file "C:\Users\junxian428\Documents\vga_text_generator\impl\pnr\vga_text_generator.rpt.html" completed
+Generate file "C:\Users\junxian428\Documents\vga_text_generator\impl\pnr\vga_text_generator.rpt.txt" completed
+Generate file "C:\Users\junxian428\Documents\vga_text_generator\impl\pnr\vga_text_generator.tr.html" completed
+Wed Feb 08 14:34:06 2023
+

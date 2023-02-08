@@ -1,0 +1,4410 @@
+//
+//Written by GowinSynthesis
+//Product Version "GowinSynthesis V1.9.8.10"
+//Wed Feb 08 14:33:57 2023
+
+//Source file index table:
+//file0 "\C:/Users/junxian428/Documents/vga_text_generator/src/commonPak.vhd"
+//file1 "\C:/Users/junxian428/Documents/vga_text_generator/src/fontRom.vhd"
+//file2 "\C:/Users/junxian428/Documents/vga_text_generator/src/pixelOnText.vhd"
+//file3 "\C:/Users/junxian428/Documents/vga_text_generator/src/wrapper.vhd"
+`timescale 100 ps/100 ps
+module Pixel_On_Text (
+  clk_d,
+  n325_11,
+  n542_10,
+  charBitInRow,
+  xCoord_d,
+  yCoord_d,
+  charCode_1_95,
+  charCode_3_106,
+  charCode_4_118,
+  charCode_5_96,
+  charCode_6_100,
+  charCode_3_109,
+  charCode_3_111,
+  charCode_3_110,
+  d1,
+  n327_9,
+  n326_9,
+  n325_11_0,
+  n324_11,
+  n323_11,
+  n322_11,
+  n321_9,
+  n540_13,
+  n544_6,
+  n544_7,
+  n544_8,
+  n544_10,
+  n544_11,
+  n539_12,
+  n327_13,
+  n327_15,
+  fontAddress,
+  charCode_1,
+  charCode_1_89,
+  charCode_6_93,
+  charCode_5_102,
+  charCode_5_104,
+  charCode_4_109,
+  charCode_4_111,
+  charCode_5_105,
+  charCode_4_113,
+  charCode_4_115,
+  charCode_5_110,
+  charCode_0_120,
+  charCode_5_112,
+  charCode_4_117
+)
+;
+input clk_d;
+input n325_11;
+input n542_10;
+input [7:0] charBitInRow;
+input [11:0] xCoord_d;
+input [11:1] yCoord_d;
+input charCode_1_95;
+input charCode_3_106;
+input charCode_4_118;
+input charCode_5_96;
+input charCode_6_100;
+input charCode_3_109;
+input charCode_3_111;
+input charCode_3_110;
+output d1;
+output n327_9;
+output n326_9;
+output n325_11_0;
+output n324_11;
+output n323_11;
+output n322_11;
+output n321_9;
+output n540_13;
+output n544_6;
+output n544_7;
+output n544_8;
+output n544_10;
+output n544_11;
+output n539_12;
+output n327_13;
+output n327_15;
+output [10:1] fontAddress;
+output [6:0] charCode_1;
+output charCode_1_89;
+output charCode_6_93;
+output charCode_5_102;
+output charCode_5_104;
+output charCode_4_109;
+output charCode_4_111;
+output charCode_5_105;
+output charCode_4_113;
+output charCode_4_115;
+output charCode_5_110;
+output charCode_0_120;
+output charCode_5_112;
+output charCode_4_117;
+wire n543_20;
+wire n543_21;
+wire n543_22;
+wire n543_23;
+wire n544_4;
+wire charCode_5_96_2;
+wire charCode_5_99;
+wire charCode_4_108;
+wire charCode_3_100;
+wire charCode_2_104;
+wire charCode_2_106;
+wire charCode_0_112;
+wire charCode_0_113;
+wire n544_5;
+wire charCode_6_94;
+wire n323_12;
+wire charCode_5_101;
+wire charCode_5_103;
+wire charCode_4_112;
+wire charCode_3_102;
+wire charCode_0_116;
+wire n544_9;
+wire charCode_1_90;
+wire charCode_1_92;
+wire charCode_1_93;
+wire charCode_5_106;
+wire charCode_5_107;
+wire charCode_5_108;
+wire charCode_0_117;
+wire charCode_0_118;
+wire n544_12;
+wire charCode_1_95_3;
+wire fontAddress_4_3;
+wire fontAddress_5_3;
+wire fontAddress_6_3;
+wire fontAddress_7_3;
+wire fontAddress_8_3;
+wire fontAddress_9_3;
+wire fontAddress_10_0_COUT;
+wire n543_25;
+wire n543_27;
+wire n543_29;
+wire [6:0] charCode_0;
+wire VCC;
+wire GND;
+  LUT3 n543_s24 (
+    .F(n543_20),
+    .I0(charBitInRow[0]),
+    .I1(charBitInRow[1]),
+    .I2(xCoord_d[0]) 
+);
+defparam n543_s24.INIT=8'hCA;
+  LUT3 n543_s25 (
+    .F(n543_21),
+    .I0(charBitInRow[2]),
+    .I1(charBitInRow[3]),
+    .I2(xCoord_d[0]) 
+);
+defparam n543_s25.INIT=8'hCA;
+  LUT3 n543_s26 (
+    .F(n543_22),
+    .I0(charBitInRow[4]),
+    .I1(charBitInRow[5]),
+    .I2(xCoord_d[0]) 
+);
+defparam n543_s26.INIT=8'hCA;
+  LUT3 n543_s27 (
+    .F(n543_23),
+    .I0(charBitInRow[6]),
+    .I1(charBitInRow[7]),
+    .I2(xCoord_d[0]) 
+);
+defparam n543_s27.INIT=8'hCA;
+  LUT4 charCode_5_s77 (
+    .F(charCode_0[5]),
+    .I0(charCode_5_96_2),
+    .I1(charCode_5_112),
+    .I2(charCode_5_110),
+    .I3(charCode_5_99) 
+);
+defparam charCode_5_s77.INIT=16'hFFF4;
+  LUT3 charCode_4_s82 (
+    .F(charCode_0[4]),
+    .I0(charCode_4_117),
+    .I1(charCode_1[4]),
+    .I2(charCode_4_108) 
+);
+defparam charCode_4_s82.INIT=8'h4F;
+  LUT3 charCode_3_s79 (
+    .F(charCode_0[3]),
+    .I0(charCode_3_100),
+    .I1(charCode_1[4]),
+    .I2(charCode_1[3]) 
+);
+defparam charCode_3_s79.INIT=8'hF4;
+  LUT4 charCode_2_s81 (
+    .F(charCode_0[2]),
+    .I0(charCode_5_112),
+    .I1(charCode_2_104),
+    .I2(charCode_1[2]),
+    .I3(charCode_2_106) 
+);
+defparam charCode_2_s81.INIT=16'hFFF2;
+  LUT3 charCode_0_s85 (
+    .F(charCode_0[0]),
+    .I0(charCode_0_112),
+    .I1(charCode_1[4]),
+    .I2(charCode_0_113) 
+);
+defparam charCode_0_s85.INIT=8'hF4;
+  LUT4 n544_s1 (
+    .F(n544_4),
+    .I0(n544_5),
+    .I1(n544_6),
+    .I2(n544_7),
+    .I3(n544_8) 
+);
+defparam n544_s1.INIT=16'hBFFF;
+  LUT2 n327_s3 (
+    .F(n327_9),
+    .I0(n327_15),
+    .I1(n327_13) 
+);
+defparam n327_s3.INIT=4'h1;
+  LUT2 n326_s3 (
+    .F(n326_9),
+    .I0(yCoord_d[5]),
+    .I1(n327_15) 
+);
+defparam n326_s3.INIT=4'h6;
+  LUT3 charCode_1_s73 (
+    .F(charCode_0[1]),
+    .I0(charCode_1[1]),
+    .I1(charCode_1_89),
+    .I2(charCode_1_95) 
+);
+defparam charCode_1_s73.INIT=8'hD0;
+  LUT4 charCode_6_s75 (
+    .F(charCode_0[6]),
+    .I0(charCode_1[6]),
+    .I1(charCode_6_93),
+    .I2(charCode_6_94),
+    .I3(charCode_5_112) 
+);
+defparam charCode_6_s75.INIT=16'hF444;
+  LUT2 fontAddress_2_s4 (
+    .F(fontAddress[2]),
+    .I0(yCoord_d[1]),
+    .I1(yCoord_d[2]) 
+);
+defparam fontAddress_2_s4.INIT=4'h9;
+  LUT3 n325_s4 (
+    .F(n325_11_0),
+    .I0(yCoord_d[5]),
+    .I1(n327_15),
+    .I2(yCoord_d[6]) 
+);
+defparam n325_s4.INIT=8'h87;
+  LUT4 n324_s4 (
+    .F(n324_11),
+    .I0(yCoord_d[5]),
+    .I1(n327_15),
+    .I2(yCoord_d[6]),
+    .I3(yCoord_d[7]) 
+);
+defparam n324_s4.INIT=16'hF807;
+  LUT2 n323_s4 (
+    .F(n323_11),
+    .I0(yCoord_d[8]),
+    .I1(n323_12) 
+);
+defparam n323_s4.INIT=4'h6;
+  LUT3 n322_s4 (
+    .F(n322_11),
+    .I0(yCoord_d[8]),
+    .I1(n323_12),
+    .I2(yCoord_d[9]) 
+);
+defparam n322_s4.INIT=8'hB4;
+  LUT4 n321_s3 (
+    .F(n321_9),
+    .I0(yCoord_d[8]),
+    .I1(yCoord_d[9]),
+    .I2(n323_12),
+    .I3(yCoord_d[10]) 
+);
+defparam n321_s3.INIT=16'hEF10;
+  LUT2 n540_s6 (
+    .F(n540_13),
+    .I0(xCoord_d[0]),
+    .I1(xCoord_d[1]) 
+);
+defparam n540_s6.INIT=4'h9;
+  LUT4 charCode_5_s78 (
+    .F(charCode_5_96_2),
+    .I0(charCode_1[1]),
+    .I1(charCode_1[5]),
+    .I2(charCode_5_101),
+    .I3(charCode_3_106) 
+);
+defparam charCode_5_s78.INIT=16'h0080;
+  LUT4 charCode_5_s81 (
+    .F(charCode_5_99),
+    .I0(charCode_3_106),
+    .I1(charCode_1[1]),
+    .I2(charCode_5_104),
+    .I3(charCode_1[4]) 
+);
+defparam charCode_5_s81.INIT=16'hF700;
+  LUT4 charCode_4_s84 (
+    .F(charCode_1[4]),
+    .I0(charCode_1_89),
+    .I1(charCode_4_115),
+    .I2(charCode_6_100),
+    .I3(charCode_4_111) 
+);
+defparam charCode_4_s84.INIT=16'h0042;
+  LUT3 charCode_4_s85 (
+    .F(charCode_4_108),
+    .I0(charCode_5_112),
+    .I1(charCode_4_112),
+    .I2(charCode_4_118) 
+);
+defparam charCode_4_s85.INIT=8'h0D;
+  LUT3 charCode_3_s80 (
+    .F(charCode_3_100),
+    .I0(charCode_3_106),
+    .I1(charCode_1[1]),
+    .I2(charCode_5_104) 
+);
+defparam charCode_3_s80.INIT=8'h7C;
+  LUT4 charCode_3_s81 (
+    .F(charCode_1[3]),
+    .I0(charCode_3_102),
+    .I1(charCode_1_89),
+    .I2(charCode_4_115),
+    .I3(charCode_6_100) 
+);
+defparam charCode_3_s81.INIT=16'hE800;
+  LUT4 charCode_2_s82 (
+    .F(charCode_2_104),
+    .I0(charCode_4_111),
+    .I1(charCode_3_106),
+    .I2(charCode_1[1]),
+    .I3(charCode_1[5]) 
+);
+defparam charCode_2_s82.INIT=16'h3AED;
+  LUT4 charCode_2_s83 (
+    .F(charCode_1[2]),
+    .I0(charCode_1[1]),
+    .I1(charCode_1[5]),
+    .I2(charCode_4_111),
+    .I3(charCode_6_93) 
+);
+defparam charCode_2_s83.INIT=16'hE300;
+  LUT4 charCode_2_s84 (
+    .F(charCode_2_106),
+    .I0(charCode_3_106),
+    .I1(charCode_1[1]),
+    .I2(charCode_5_104),
+    .I3(charCode_1[4]) 
+);
+defparam charCode_2_s84.INIT=16'hE000;
+  LUT3 charCode_0_s86 (
+    .F(charCode_0_112),
+    .I0(charCode_3_106),
+    .I1(charCode_1[5]),
+    .I2(charCode_1[1]) 
+);
+defparam charCode_0_s86.INIT=8'hBC;
+  LUT4 charCode_0_s87 (
+    .F(charCode_0_113),
+    .I0(charCode_1[0]),
+    .I1(charCode_0_120),
+    .I2(charCode_6_100),
+    .I3(charCode_0_116) 
+);
+defparam charCode_0_s87.INIT=16'h50C0;
+  LUT4 n544_s2 (
+    .F(n544_5),
+    .I0(xCoord_d[6]),
+    .I1(n544_9),
+    .I2(xCoord_d[7]),
+    .I3(xCoord_d[8]) 
+);
+defparam n544_s2.INIT=16'hF800;
+  LUT2 n544_s3 (
+    .F(n544_6),
+    .I0(xCoord_d[10]),
+    .I1(xCoord_d[9]) 
+);
+defparam n544_s3.INIT=4'h1;
+  LUT3 n544_s4 (
+    .F(n544_7),
+    .I0(n323_12),
+    .I1(n544_10),
+    .I2(n325_11) 
+);
+defparam n544_s4.INIT=8'h04;
+  LUT2 n544_s5 (
+    .F(n544_8),
+    .I0(xCoord_d[11]),
+    .I1(charCode_3_109) 
+);
+defparam n544_s5.INIT=4'h1;
+  LUT4 charCode_1_s74 (
+    .F(charCode_1[1]),
+    .I0(xCoord_d[11]),
+    .I1(charCode_3_109),
+    .I2(charCode_1_90),
+    .I3(charCode_1_95_3) 
+);
+defparam charCode_1_s74.INIT=16'hF10E;
+  LUT4 charCode_1_s75 (
+    .F(charCode_1_89),
+    .I0(xCoord_d[6]),
+    .I1(charCode_1_92),
+    .I2(xCoord_d[5]),
+    .I3(charCode_1_93) 
+);
+defparam charCode_1_s75.INIT=16'hBF40;
+  LUT4 charCode_6_s76 (
+    .F(charCode_1[6]),
+    .I0(xCoord_d[6]),
+    .I1(charCode_5_101),
+    .I2(charCode_1[5]),
+    .I3(charCode_5_96) 
+);
+defparam charCode_6_s76.INIT=16'h0C40;
+  LUT2 charCode_6_s77 (
+    .F(charCode_6_93),
+    .I0(xCoord_d[8]),
+    .I1(charCode_1_89) 
+);
+defparam charCode_6_s77.INIT=4'h4;
+  LUT4 charCode_6_s78 (
+    .F(charCode_6_94),
+    .I0(charCode_1[1]),
+    .I1(charCode_5_104),
+    .I2(charCode_3_106),
+    .I3(charCode_4_111) 
+);
+defparam charCode_6_s78.INIT=16'h0BC6;
+  LUT4 n323_s5 (
+    .F(n323_12),
+    .I0(n327_15),
+    .I1(yCoord_d[5]),
+    .I2(yCoord_d[7]),
+    .I3(yCoord_d[6]) 
+);
+defparam n323_s5.INIT=16'h0007;
+  LUT4 charCode_5_s82 (
+    .F(charCode_1[5]),
+    .I0(charCode_1[1]),
+    .I1(charCode_5_105),
+    .I2(charCode_3_111),
+    .I3(charCode_4_109) 
+);
+defparam charCode_5_s82.INIT=16'h2FD0;
+  LUT4 charCode_5_s83 (
+    .F(charCode_5_101),
+    .I0(xCoord_d[11]),
+    .I1(charCode_3_109),
+    .I2(charCode_5_106),
+    .I3(charCode_5_107) 
+);
+defparam charCode_5_s83.INIT=16'h1FE0;
+  LUT3 charCode_5_s84 (
+    .F(charCode_5_102),
+    .I0(charCode_1[1]),
+    .I1(charCode_5_108),
+    .I2(charCode_1_89) 
+);
+defparam charCode_5_s84.INIT=8'hB4;
+  LUT4 charCode_5_s85 (
+    .F(charCode_5_103),
+    .I0(charCode_1[1]),
+    .I1(charCode_4_111),
+    .I2(charCode_3_106),
+    .I3(charCode_1[5]) 
+);
+defparam charCode_5_s85.INIT=16'hE1DE;
+  LUT4 charCode_5_s86 (
+    .F(charCode_5_104),
+    .I0(charCode_3_111),
+    .I1(charCode_3_110),
+    .I2(n544_8),
+    .I3(charCode_4_109) 
+);
+defparam charCode_5_s86.INIT=16'hFD02;
+  LUT2 charCode_4_s86 (
+    .F(charCode_4_109),
+    .I0(xCoord_d[5]),
+    .I1(charCode_4_113) 
+);
+defparam charCode_4_s86.INIT=4'h9;
+  LUT4 charCode_4_s88 (
+    .F(charCode_4_111),
+    .I0(charCode_3_111),
+    .I1(xCoord_d[5]),
+    .I2(charCode_1[1]),
+    .I3(charCode_5_101) 
+);
+defparam charCode_4_s88.INIT=16'hF708;
+  LUT4 charCode_4_s89 (
+    .F(charCode_4_112),
+    .I0(charCode_3_106),
+    .I1(charCode_4_111),
+    .I2(charCode_1[1]),
+    .I3(charCode_5_104) 
+);
+defparam charCode_4_s89.INIT=16'hFCCB;
+  LUT4 charCode_3_s82 (
+    .F(charCode_3_102),
+    .I0(charCode_1[5]),
+    .I1(charCode_1[1]),
+    .I2(charCode_4_111),
+    .I3(charCode_3_106) 
+);
+defparam charCode_3_s82.INIT=16'h7C87;
+  LUT3 charCode_0_s88 (
+    .F(charCode_1[0]),
+    .I0(charCode_1[1]),
+    .I1(charCode_5_102),
+    .I2(charCode_0_117) 
+);
+defparam charCode_0_s88.INIT=8'h4C;
+  LUT4 charCode_0_s90 (
+    .F(charCode_0_116),
+    .I0(charCode_0_117),
+    .I1(charCode_3_106),
+    .I2(charCode_5_102),
+    .I3(charCode_4_111) 
+);
+defparam charCode_0_s90.INIT=16'hF50C;
+  LUT4 n544_s6 (
+    .F(n544_9),
+    .I0(xCoord_d[3]),
+    .I1(xCoord_d[4]),
+    .I2(n544_11),
+    .I3(xCoord_d[5]) 
+);
+defparam n544_s6.INIT=16'hEF00;
+  LUT4 n544_s7 (
+    .F(n544_10),
+    .I0(yCoord_d[7]),
+    .I1(yCoord_d[8]),
+    .I2(yCoord_d[9]),
+    .I3(n544_12) 
+);
+defparam n544_s7.INIT=16'h0100;
+  LUT3 charCode_1_s76 (
+    .F(charCode_1_90),
+    .I0(xCoord_d[0]),
+    .I1(xCoord_d[2]),
+    .I2(xCoord_d[1]) 
+);
+defparam charCode_1_s76.INIT=8'h10;
+  LUT4 charCode_1_s78 (
+    .F(charCode_1_92),
+    .I0(n542_10),
+    .I1(xCoord_d[11]),
+    .I2(charCode_3_111),
+    .I3(charCode_3_110) 
+);
+defparam charCode_1_s78.INIT=16'h00E0;
+  LUT4 charCode_1_s79 (
+    .F(charCode_1_93),
+    .I0(xCoord_d[5]),
+    .I1(charCode_4_113),
+    .I2(xCoord_d[6]),
+    .I3(xCoord_d[7]) 
+);
+defparam charCode_1_s79.INIT=16'h07F8;
+  LUT3 charCode_5_s87 (
+    .F(charCode_5_105),
+    .I0(charCode_3_109),
+    .I1(xCoord_d[11]),
+    .I2(charCode_3_110) 
+);
+defparam charCode_5_s87.INIT=8'h0E;
+  LUT3 charCode_5_s88 (
+    .F(charCode_5_106),
+    .I0(charCode_3_111),
+    .I1(charCode_3_110),
+    .I2(xCoord_d[5]) 
+);
+defparam charCode_5_s88.INIT=8'h20;
+  LUT3 charCode_5_s89 (
+    .F(charCode_5_107),
+    .I0(xCoord_d[5]),
+    .I1(charCode_4_113),
+    .I2(xCoord_d[6]) 
+);
+defparam charCode_5_s89.INIT=8'h87;
+  LUT3 charCode_5_s90 (
+    .F(charCode_5_108),
+    .I0(charCode_3_111),
+    .I1(charCode_5_107),
+    .I2(xCoord_d[5]) 
+);
+defparam charCode_5_s90.INIT=8'h80;
+  LUT4 charCode_4_s90 (
+    .F(charCode_4_113),
+    .I0(xCoord_d[2]),
+    .I1(xCoord_d[1]),
+    .I2(xCoord_d[3]),
+    .I3(xCoord_d[4]) 
+);
+defparam charCode_4_s90.INIT=16'hFE00;
+  LUT4 charCode_0_s91 (
+    .F(charCode_0_117),
+    .I0(charCode_5_105),
+    .I1(charCode_1[1]),
+    .I2(charCode_3_111),
+    .I3(charCode_4_109) 
+);
+defparam charCode_0_s91.INIT=16'h7CCB;
+  LUT4 charCode_0_s92 (
+    .F(charCode_0_118),
+    .I0(charCode_4_109),
+    .I1(charCode_3_111),
+    .I2(charCode_5_105),
+    .I3(charCode_1[1]) 
+);
+defparam charCode_0_s92.INIT=16'h14DB;
+  LUT2 n544_s8 (
+    .F(n544_11),
+    .I0(xCoord_d[1]),
+    .I1(xCoord_d[2]) 
+);
+defparam n544_s8.INIT=4'h1;
+  LUT2 n544_s9 (
+    .F(n544_12),
+    .I0(yCoord_d[10]),
+    .I1(yCoord_d[11]) 
+);
+defparam n544_s9.INIT=4'h1;
+  LUT4 charCode_4_s91 (
+    .F(charCode_4_115),
+    .I0(charCode_1[1]),
+    .I1(charCode_3_111),
+    .I2(charCode_5_107),
+    .I3(xCoord_d[5]) 
+);
+defparam charCode_4_s91.INIT=16'h4000;
+  LUT3 charCode_1_s80 (
+    .F(charCode_1_95_3),
+    .I0(xCoord_d[3]),
+    .I1(xCoord_d[1]),
+    .I2(xCoord_d[2]) 
+);
+defparam charCode_1_s80.INIT=8'h56;
+  LUT3 n539_s5 (
+    .F(n539_12),
+    .I0(xCoord_d[0]),
+    .I1(xCoord_d[1]),
+    .I2(xCoord_d[2]) 
+);
+defparam n539_s5.INIT=8'h78;
+  LUT3 charCode_5_s91 (
+    .F(charCode_5_110),
+    .I0(charCode_5_103),
+    .I1(xCoord_d[8]),
+    .I2(charCode_1_89) 
+);
+defparam charCode_5_s91.INIT=8'h20;
+  LUT4 charCode_0_s93 (
+    .F(charCode_0_120),
+    .I0(charCode_1[1]),
+    .I1(charCode_5_108),
+    .I2(charCode_1_89),
+    .I3(charCode_0_118) 
+);
+defparam charCode_0_s93.INIT=16'hB400;
+  LUT4 charCode_5_s92 (
+    .F(charCode_5_112),
+    .I0(charCode_6_100),
+    .I1(charCode_1[1]),
+    .I2(charCode_5_108),
+    .I3(charCode_1_89) 
+);
+defparam charCode_5_s92.INIT=16'h208A;
+  LUT4 n327_s6 (
+    .F(n327_13),
+    .I0(yCoord_d[4]),
+    .I1(yCoord_d[3]),
+    .I2(yCoord_d[1]),
+    .I3(yCoord_d[2]) 
+);
+defparam n327_s6.INIT=16'h0001;
+  LUT4 n327_s7 (
+    .F(n327_15),
+    .I0(yCoord_d[1]),
+    .I1(yCoord_d[2]),
+    .I2(yCoord_d[3]),
+    .I3(yCoord_d[4]) 
+);
+defparam n327_s7.INIT=16'hFE00;
+  LUT4 charCode_4_s92 (
+    .F(charCode_4_117),
+    .I0(charCode_3_106),
+    .I1(xCoord_d[5]),
+    .I2(charCode_4_113),
+    .I3(charCode_1[1]) 
+);
+defparam charCode_4_s92.INIT=16'hAA3C;
+  LUT3 fontAddress_3_s6 (
+    .F(fontAddress[3]),
+    .I0(yCoord_d[3]),
+    .I1(yCoord_d[1]),
+    .I2(yCoord_d[2]) 
+);
+defparam fontAddress_3_s6.INIT=8'hA9;
+  DFFR pixel_s0 (
+    .Q(d1),
+    .D(n543_29),
+    .CLK(clk_d),
+    .RESET(n544_4) 
+);
+defparam pixel_s0.INIT=1'b0;
+  ALU fontAddress_4_s (
+    .SUM(fontAddress[4]),
+    .COUT(fontAddress_4_3),
+    .I0(charCode_0[0]),
+    .I1(n327_9),
+    .I3(GND),
+    .CIN(GND) 
+);
+defparam fontAddress_4_s.ALU_MODE=0;
+  ALU fontAddress_5_s (
+    .SUM(fontAddress[5]),
+    .COUT(fontAddress_5_3),
+    .I0(charCode_0[1]),
+    .I1(n326_9),
+    .I3(GND),
+    .CIN(fontAddress_4_3) 
+);
+defparam fontAddress_5_s.ALU_MODE=0;
+  ALU fontAddress_6_s (
+    .SUM(fontAddress[6]),
+    .COUT(fontAddress_6_3),
+    .I0(charCode_0[2]),
+    .I1(n325_11_0),
+    .I3(GND),
+    .CIN(fontAddress_5_3) 
+);
+defparam fontAddress_6_s.ALU_MODE=0;
+  ALU fontAddress_7_s (
+    .SUM(fontAddress[7]),
+    .COUT(fontAddress_7_3),
+    .I0(charCode_0[3]),
+    .I1(n324_11),
+    .I3(GND),
+    .CIN(fontAddress_6_3) 
+);
+defparam fontAddress_7_s.ALU_MODE=0;
+  ALU fontAddress_8_s (
+    .SUM(fontAddress[8]),
+    .COUT(fontAddress_8_3),
+    .I0(charCode_0[4]),
+    .I1(n323_11),
+    .I3(GND),
+    .CIN(fontAddress_7_3) 
+);
+defparam fontAddress_8_s.ALU_MODE=0;
+  ALU fontAddress_9_s (
+    .SUM(fontAddress[9]),
+    .COUT(fontAddress_9_3),
+    .I0(charCode_0[5]),
+    .I1(n322_11),
+    .I3(GND),
+    .CIN(fontAddress_8_3) 
+);
+defparam fontAddress_9_s.ALU_MODE=0;
+  ALU fontAddress_10_s (
+    .SUM(fontAddress[10]),
+    .COUT(fontAddress_10_0_COUT),
+    .I0(charCode_0[6]),
+    .I1(n321_9),
+    .I3(GND),
+    .CIN(fontAddress_9_3) 
+);
+defparam fontAddress_10_s.ALU_MODE=0;
+  MUX2_LUT5 n543_s22 (
+    .O(n543_25),
+    .I0(n543_20),
+    .I1(n543_21),
+    .S0(n540_13) 
+);
+  MUX2_LUT5 n543_s23 (
+    .O(n543_27),
+    .I0(n543_22),
+    .I1(n543_23),
+    .S0(n540_13) 
+);
+  MUX2_LUT6 n543_s21 (
+    .O(n543_29),
+    .I0(n543_25),
+    .I1(n543_27),
+    .S0(n539_12) 
+);
+  INV fontAddress_1_s10 (
+    .O(fontAddress[1]),
+    .I(yCoord_d[1]) 
+);
+  VCC VCC_cZ (
+    .V(VCC)
+);
+  GND GND_cZ (
+    .G(GND)
+);
+endmodule /* Pixel_On_Text */
+module Pixel_On_Text_0 (
+  clk_d,
+  n327_9,
+  n326_9,
+  n325_11,
+  n324_11,
+  n323_11,
+  n322_11,
+  n321_9,
+  n544_7,
+  n544_6,
+  charBitInRow,
+  xCoord_d,
+  d2,
+  fontAddress
+)
+;
+input clk_d;
+input n327_9;
+input n326_9;
+input n325_11;
+input n324_11;
+input n323_11;
+input n322_11;
+input n321_9;
+input n544_7;
+input n544_6;
+input [7:0] charBitInRow;
+input [11:0] xCoord_d;
+output d2;
+output [10:4] fontAddress;
+wire n544_20;
+wire n544_21;
+wire n544_22;
+wire n544_23;
+wire n545_4;
+wire charCode_5_90;
+wire charCode_5_91;
+wire charCode_4_110;
+wire charCode_4_111;
+wire charCode_3_104;
+wire charCode_3_105;
+wire charCode_2_102;
+wire charCode_2_103;
+wire charCode_0_113;
+wire n545_5;
+wire n545_6;
+wire n540_9;
+wire charCode_1_88;
+wire charCode_1_89;
+wire charCode_6_92;
+wire charCode_6_93;
+wire charCode_5_93;
+wire charCode_5_94;
+wire charCode_5_95;
+wire charCode_5_96;
+wire charCode_4_113;
+wire charCode_4_114;
+wire charCode_4_115;
+wire charCode_4_116;
+wire charCode_4_117;
+wire charCode_3_106;
+wire charCode_2_105;
+wire charCode_2_106;
+wire charCode_2_107;
+wire charCode_2_108;
+wire charCode_0_114;
+wire charCode_0_115;
+wire n545_7;
+wire n545_8;
+wire n545_9;
+wire charCode_5_97;
+wire charCode_4_118;
+wire n545_10;
+wire n540_11;
+wire n541_16;
+wire charCode_0_117;
+wire charCode_2_110;
+wire charCode_4_120;
+wire charCode_5_99;
+wire fontAddress_4_3;
+wire fontAddress_5_3;
+wire fontAddress_6_3;
+wire fontAddress_7_3;
+wire fontAddress_8_3;
+wire fontAddress_9_3;
+wire fontAddress_10_0_COUT;
+wire n544_25;
+wire n544_27;
+wire n544_29;
+wire [6:0] charCode;
+wire VCC;
+wire GND;
+  LUT3 n544_s24 (
+    .F(n544_20),
+    .I0(charBitInRow[0]),
+    .I1(charBitInRow[1]),
+    .I2(xCoord_d[0]) 
+);
+defparam n544_s24.INIT=8'hCA;
+  LUT3 n544_s25 (
+    .F(n544_21),
+    .I0(charBitInRow[2]),
+    .I1(charBitInRow[3]),
+    .I2(xCoord_d[0]) 
+);
+defparam n544_s25.INIT=8'hCA;
+  LUT3 n544_s26 (
+    .F(n544_22),
+    .I0(charBitInRow[4]),
+    .I1(charBitInRow[5]),
+    .I2(xCoord_d[0]) 
+);
+defparam n544_s26.INIT=8'hCA;
+  LUT3 n544_s27 (
+    .F(n544_23),
+    .I0(charBitInRow[6]),
+    .I1(charBitInRow[7]),
+    .I2(xCoord_d[0]) 
+);
+defparam n544_s27.INIT=8'hCA;
+  LUT3 charCode_5_s74 (
+    .F(charCode[5]),
+    .I0(charCode_5_90),
+    .I1(charCode_5_91),
+    .I2(charCode_5_99) 
+);
+defparam charCode_5_s74.INIT=8'hC5;
+  LUT4 charCode_4_s84 (
+    .F(charCode[4]),
+    .I0(charCode_4_110),
+    .I1(charCode_4_111),
+    .I2(charCode_4_120),
+    .I3(charCode_5_99) 
+);
+defparam charCode_4_s84.INIT=16'hF088;
+  LUT3 charCode_3_s81 (
+    .F(charCode[3]),
+    .I0(charCode_3_104),
+    .I1(charCode_3_105),
+    .I2(charCode_5_99) 
+);
+defparam charCode_3_s81.INIT=8'h5C;
+  LUT4 charCode_2_s80 (
+    .F(charCode[2]),
+    .I0(charCode_2_102),
+    .I1(charCode_2_103),
+    .I2(charCode_2_110),
+    .I3(charCode_5_99) 
+);
+defparam charCode_2_s80.INIT=16'hF088;
+  LUT3 charCode_0_s85 (
+    .F(charCode[0]),
+    .I0(charCode_0_117),
+    .I1(charCode_0_113),
+    .I2(charCode_5_99) 
+);
+defparam charCode_0_s85.INIT=8'hAC;
+  LUT4 n545_s1 (
+    .F(n545_4),
+    .I0(xCoord_d[10]),
+    .I1(n545_5),
+    .I2(n544_7),
+    .I3(n545_6) 
+);
+defparam n545_s1.INIT=16'hEFFF;
+  LUT4 charCode_1_s73 (
+    .F(charCode[1]),
+    .I0(charCode_1_88),
+    .I1(charCode_1_89),
+    .I2(charCode_5_99),
+    .I3(charCode_4_110) 
+);
+defparam charCode_1_s73.INIT=16'h5030;
+  LUT4 charCode_6_s75 (
+    .F(charCode[6]),
+    .I0(charCode_6_92),
+    .I1(charCode_6_93),
+    .I2(charCode_5_99),
+    .I3(charCode_4_110) 
+);
+defparam charCode_6_s75.INIT=16'h50C0;
+  LUT3 charCode_5_s75 (
+    .F(charCode_5_90),
+    .I0(charCode_5_93),
+    .I1(charCode_2_102),
+    .I2(charCode_5_94) 
+);
+defparam charCode_5_s75.INIT=8'hBD;
+  LUT4 charCode_5_s76 (
+    .F(charCode_5_91),
+    .I0(charCode_2_102),
+    .I1(charCode_4_110),
+    .I2(charCode_5_95),
+    .I3(charCode_5_96) 
+);
+defparam charCode_5_s76.INIT=16'hF37A;
+  LUT2 charCode_4_s85 (
+    .F(charCode_4_110),
+    .I0(charCode_4_113),
+    .I1(charCode_5_94) 
+);
+defparam charCode_4_s85.INIT=4'h6;
+  LUT4 charCode_4_s86 (
+    .F(charCode_4_111),
+    .I0(charCode_5_96),
+    .I1(charCode_4_114),
+    .I2(charCode_4_115),
+    .I3(charCode_2_102) 
+);
+defparam charCode_4_s86.INIT=16'h1F00;
+  LUT4 charCode_3_s82 (
+    .F(charCode_3_104),
+    .I0(charCode_2_102),
+    .I1(charCode_4_110),
+    .I2(charCode_3_106),
+    .I3(charCode_4_115) 
+);
+defparam charCode_3_s82.INIT=16'h3EA7;
+  LUT4 charCode_3_s83 (
+    .F(charCode_3_105),
+    .I0(charCode_4_114),
+    .I1(charCode_5_96),
+    .I2(charCode_4_115),
+    .I3(charCode_5_90) 
+);
+defparam charCode_3_s83.INIT=16'h00E0;
+  LUT4 charCode_2_s81 (
+    .F(charCode_2_102),
+    .I0(n545_6),
+    .I1(charCode_2_105),
+    .I2(xCoord_d[5]),
+    .I3(charCode_2_106) 
+);
+defparam charCode_2_s81.INIT=16'hEF10;
+  LUT4 charCode_2_s82 (
+    .F(charCode_2_103),
+    .I0(xCoord_d[5]),
+    .I1(charCode_5_94),
+    .I2(charCode_4_115),
+    .I3(charCode_5_96) 
+);
+defparam charCode_2_s82.INIT=16'h400C;
+  LUT4 charCode_0_s87 (
+    .F(charCode_0_113),
+    .I0(charCode_4_114),
+    .I1(charCode_4_115),
+    .I2(charCode_5_90),
+    .I3(charCode_5_96) 
+);
+defparam charCode_0_s87.INIT=16'h000B;
+  LUT3 n545_s2 (
+    .F(n545_5),
+    .I0(n545_7),
+    .I1(xCoord_d[8]),
+    .I2(xCoord_d[9]) 
+);
+defparam n545_s2.INIT=8'h40;
+  LUT4 n545_s3 (
+    .F(n545_6),
+    .I0(n545_8),
+    .I1(n545_9),
+    .I2(n544_6),
+    .I3(xCoord_d[11]) 
+);
+defparam n545_s3.INIT=16'h008F;
+  LUT2 n540_s4 (
+    .F(n540_9),
+    .I0(xCoord_d[0]),
+    .I1(xCoord_d[1]) 
+);
+defparam n540_s4.INIT=4'h1;
+  LUT4 charCode_1_s74 (
+    .F(charCode_1_88),
+    .I0(charCode_5_96),
+    .I1(charCode_4_115),
+    .I2(charCode_2_102),
+    .I3(charCode_4_114) 
+);
+defparam charCode_1_s74.INIT=16'h1FFE;
+  LUT4 charCode_1_s75 (
+    .F(charCode_1_89),
+    .I0(charCode_4_115),
+    .I1(charCode_5_96),
+    .I2(charCode_2_102),
+    .I3(charCode_4_114) 
+);
+defparam charCode_1_s75.INIT=16'hDF78;
+  LUT4 charCode_6_s76 (
+    .F(charCode_6_92),
+    .I0(charCode_4_115),
+    .I1(charCode_5_96),
+    .I2(charCode_4_114),
+    .I3(charCode_2_102) 
+);
+defparam charCode_6_s76.INIT=16'h00E0;
+  LUT4 charCode_6_s77 (
+    .F(charCode_6_93),
+    .I0(charCode_5_96),
+    .I1(charCode_4_115),
+    .I2(charCode_2_102),
+    .I3(charCode_4_114) 
+);
+defparam charCode_6_s77.INIT=16'h13E1;
+  LUT3 charCode_5_s78 (
+    .F(charCode_5_93),
+    .I0(charCode_5_96),
+    .I1(charCode_4_115),
+    .I2(xCoord_d[5]) 
+);
+defparam charCode_5_s78.INIT=8'h80;
+  LUT4 charCode_5_s79 (
+    .F(charCode_5_94),
+    .I0(n545_8),
+    .I1(charCode_5_97),
+    .I2(xCoord_d[7]),
+    .I3(charCode_5_96) 
+);
+defparam charCode_5_s79.INIT=16'h87C3;
+  LUT4 charCode_5_s80 (
+    .F(charCode_5_95),
+    .I0(charCode_5_96),
+    .I1(charCode_4_115),
+    .I2(charCode_4_114),
+    .I3(charCode_2_102) 
+);
+defparam charCode_5_s80.INIT=16'hCB7C;
+  LUT4 charCode_5_s81 (
+    .F(charCode_5_96),
+    .I0(n540_9),
+    .I1(xCoord_d[2]),
+    .I2(n545_6),
+    .I3(xCoord_d[3]) 
+);
+defparam charCode_5_s81.INIT=16'hCB34;
+  LUT4 charCode_4_s88 (
+    .F(charCode_4_113),
+    .I0(charCode_5_96),
+    .I1(charCode_4_115),
+    .I2(xCoord_d[5]),
+    .I3(charCode_2_102) 
+);
+defparam charCode_4_s88.INIT=16'h0080;
+  LUT4 charCode_4_s89 (
+    .F(charCode_4_114),
+    .I0(xCoord_d[4]),
+    .I1(n545_6),
+    .I2(charCode_2_105),
+    .I3(xCoord_d[5]) 
+);
+defparam charCode_4_s89.INIT=16'h5CA3;
+  LUT4 charCode_4_s90 (
+    .F(charCode_4_115),
+    .I0(charCode_4_118),
+    .I1(xCoord_d[2]),
+    .I2(n545_6),
+    .I3(xCoord_d[4]) 
+);
+defparam charCode_4_s90.INIT=16'h28D7;
+  LUT4 charCode_4_s91 (
+    .F(charCode_4_116),
+    .I0(charCode_4_115),
+    .I1(charCode_4_114),
+    .I2(charCode_5_96),
+    .I3(charCode_2_102) 
+);
+defparam charCode_4_s91.INIT=16'hBCCA;
+  LUT4 charCode_4_s92 (
+    .F(charCode_4_117),
+    .I0(charCode_4_115),
+    .I1(charCode_5_96),
+    .I2(charCode_4_114),
+    .I3(charCode_2_102) 
+);
+defparam charCode_4_s92.INIT=16'hC3BE;
+  LUT4 charCode_3_s84 (
+    .F(charCode_3_106),
+    .I0(charCode_2_102),
+    .I1(charCode_4_115),
+    .I2(charCode_5_96),
+    .I3(charCode_4_114) 
+);
+defparam charCode_3_s84.INIT=16'h8C4B;
+  LUT4 charCode_2_s84 (
+    .F(charCode_2_105),
+    .I0(n540_9),
+    .I1(xCoord_d[4]),
+    .I2(xCoord_d[3]),
+    .I3(xCoord_d[2]) 
+);
+defparam charCode_2_s84.INIT=16'hEFF3;
+  LUT3 charCode_2_s85 (
+    .F(charCode_2_106),
+    .I0(xCoord_d[5]),
+    .I1(xCoord_d[6]),
+    .I2(n545_8) 
+);
+defparam charCode_2_s85.INIT=8'h93;
+  LUT4 charCode_2_s86 (
+    .F(charCode_2_107),
+    .I0(charCode_4_115),
+    .I1(charCode_5_96),
+    .I2(charCode_4_114),
+    .I3(charCode_2_102) 
+);
+defparam charCode_2_s86.INIT=16'h07C8;
+  LUT4 charCode_2_s87 (
+    .F(charCode_2_108),
+    .I0(charCode_2_102),
+    .I1(charCode_4_115),
+    .I2(charCode_5_96),
+    .I3(charCode_4_114) 
+);
+defparam charCode_2_s87.INIT=16'h2DC6;
+  LUT4 charCode_0_s88 (
+    .F(charCode_0_114),
+    .I0(charCode_5_96),
+    .I1(charCode_2_102),
+    .I2(charCode_4_114),
+    .I3(charCode_4_115) 
+);
+defparam charCode_0_s88.INIT=16'h53EF;
+  LUT4 charCode_0_s89 (
+    .F(charCode_0_115),
+    .I0(charCode_4_115),
+    .I1(charCode_2_102),
+    .I2(charCode_4_114),
+    .I3(charCode_5_96) 
+);
+defparam charCode_0_s89.INIT=16'hB35C;
+  LUT4 n545_s4 (
+    .F(n545_7),
+    .I0(n545_10),
+    .I1(xCoord_d[5]),
+    .I2(xCoord_d[7]),
+    .I3(xCoord_d[6]) 
+);
+defparam n545_s4.INIT=16'h000B;
+  LUT3 n545_s5 (
+    .F(n545_8),
+    .I0(xCoord_d[3]),
+    .I1(xCoord_d[2]),
+    .I2(xCoord_d[4]) 
+);
+defparam n545_s5.INIT=8'hE0;
+  LUT4 n545_s6 (
+    .F(n545_9),
+    .I0(xCoord_d[6]),
+    .I1(xCoord_d[8]),
+    .I2(xCoord_d[5]),
+    .I3(xCoord_d[7]) 
+);
+defparam n545_s6.INIT=16'h8000;
+  LUT3 charCode_5_s82 (
+    .F(charCode_5_97),
+    .I0(n545_10),
+    .I1(xCoord_d[5]),
+    .I2(xCoord_d[6]) 
+);
+defparam charCode_5_s82.INIT=8'h40;
+  LUT4 charCode_4_s93 (
+    .F(charCode_4_118),
+    .I0(xCoord_d[1]),
+    .I1(xCoord_d[0]),
+    .I2(xCoord_d[2]),
+    .I3(xCoord_d[3]) 
+);
+defparam charCode_4_s93.INIT=16'hE00F;
+  LUT3 n545_s7 (
+    .F(n545_10),
+    .I0(xCoord_d[3]),
+    .I1(xCoord_d[2]),
+    .I2(xCoord_d[4]) 
+);
+defparam n545_s7.INIT=8'h07;
+  LUT3 n540_s5 (
+    .F(n540_11),
+    .I0(xCoord_d[2]),
+    .I1(xCoord_d[0]),
+    .I2(xCoord_d[1]) 
+);
+defparam n540_s5.INIT=8'hA9;
+  LUT2 n541_s7 (
+    .F(n541_16),
+    .I0(xCoord_d[0]),
+    .I1(xCoord_d[1]) 
+);
+defparam n541_s7.INIT=4'h6;
+  LUT4 charCode_0_s90 (
+    .F(charCode_0_117),
+    .I0(charCode_0_114),
+    .I1(charCode_0_115),
+    .I2(charCode_4_113),
+    .I3(charCode_5_94) 
+);
+defparam charCode_0_s90.INIT=16'h5335;
+  LUT4 charCode_2_s88 (
+    .F(charCode_2_110),
+    .I0(charCode_2_107),
+    .I1(charCode_2_108),
+    .I2(charCode_4_113),
+    .I3(charCode_5_94) 
+);
+defparam charCode_2_s88.INIT=16'h3553;
+  LUT4 charCode_4_s94 (
+    .F(charCode_4_120),
+    .I0(charCode_4_116),
+    .I1(charCode_4_117),
+    .I2(charCode_4_113),
+    .I3(charCode_5_94) 
+);
+defparam charCode_4_s94.INIT=16'h3553;
+  LUT4 charCode_5_s83 (
+    .F(charCode_5_99),
+    .I0(charCode_4_113),
+    .I1(charCode_5_94),
+    .I2(xCoord_d[7]),
+    .I3(xCoord_d[8]) 
+);
+defparam charCode_5_s83.INIT=16'h609F;
+  DFFR pixel_s0 (
+    .Q(d2),
+    .D(n544_29),
+    .CLK(clk_d),
+    .RESET(n545_4) 
+);
+defparam pixel_s0.INIT=1'b0;
+  ALU fontAddress_4_s (
+    .SUM(fontAddress[4]),
+    .COUT(fontAddress_4_3),
+    .I0(charCode[0]),
+    .I1(n327_9),
+    .I3(GND),
+    .CIN(GND) 
+);
+defparam fontAddress_4_s.ALU_MODE=0;
+  ALU fontAddress_5_s (
+    .SUM(fontAddress[5]),
+    .COUT(fontAddress_5_3),
+    .I0(charCode[1]),
+    .I1(n326_9),
+    .I3(GND),
+    .CIN(fontAddress_4_3) 
+);
+defparam fontAddress_5_s.ALU_MODE=0;
+  ALU fontAddress_6_s (
+    .SUM(fontAddress[6]),
+    .COUT(fontAddress_6_3),
+    .I0(charCode[2]),
+    .I1(n325_11),
+    .I3(GND),
+    .CIN(fontAddress_5_3) 
+);
+defparam fontAddress_6_s.ALU_MODE=0;
+  ALU fontAddress_7_s (
+    .SUM(fontAddress[7]),
+    .COUT(fontAddress_7_3),
+    .I0(charCode[3]),
+    .I1(n324_11),
+    .I3(GND),
+    .CIN(fontAddress_6_3) 
+);
+defparam fontAddress_7_s.ALU_MODE=0;
+  ALU fontAddress_8_s (
+    .SUM(fontAddress[8]),
+    .COUT(fontAddress_8_3),
+    .I0(charCode[4]),
+    .I1(n323_11),
+    .I3(GND),
+    .CIN(fontAddress_7_3) 
+);
+defparam fontAddress_8_s.ALU_MODE=0;
+  ALU fontAddress_9_s (
+    .SUM(fontAddress[9]),
+    .COUT(fontAddress_9_3),
+    .I0(charCode[5]),
+    .I1(n322_11),
+    .I3(GND),
+    .CIN(fontAddress_8_3) 
+);
+defparam fontAddress_9_s.ALU_MODE=0;
+  ALU fontAddress_10_s (
+    .SUM(fontAddress[10]),
+    .COUT(fontAddress_10_0_COUT),
+    .I0(charCode[6]),
+    .I1(n321_9),
+    .I3(GND),
+    .CIN(fontAddress_9_3) 
+);
+defparam fontAddress_10_s.ALU_MODE=0;
+  MUX2_LUT5 n544_s22 (
+    .O(n544_25),
+    .I0(n544_20),
+    .I1(n544_21),
+    .S0(n541_16) 
+);
+  MUX2_LUT5 n544_s23 (
+    .O(n544_27),
+    .I0(n544_22),
+    .I1(n544_23),
+    .S0(n541_16) 
+);
+  MUX2_LUT6 n544_s21 (
+    .O(n544_29),
+    .I0(n544_25),
+    .I1(n544_27),
+    .S0(n540_11) 
+);
+  VCC VCC_cZ (
+    .V(VCC)
+);
+  GND GND_cZ (
+    .G(GND)
+);
+endmodule /* Pixel_On_Text_0 */
+module Pixel_On_Text_1 (
+  clk_d,
+  n540_13,
+  n539_12,
+  n544_8,
+  n327_13,
+  n327_15,
+  n544_6,
+  n542_10,
+  n544_11,
+  charBitInRow,
+  xCoord_d_0,
+  xCoord_d_1,
+  xCoord_d_2,
+  xCoord_d_3,
+  xCoord_d_4,
+  xCoord_d_5,
+  xCoord_d_6,
+  xCoord_d_7,
+  xCoord_d_8,
+  xCoord_d_11,
+  charCode,
+  yCoord_d,
+  charCode_5_110,
+  charCode_5_100,
+  charCode_4_111,
+  charCode_1_88,
+  charCode_4_117,
+  charCode_6_93,
+  charCode_4_107,
+  charCode_5_104,
+  charCode_0_114,
+  charCode_5_105,
+  charCode_4_109,
+  charCode_4_113,
+  charCode_5_102,
+  d3,
+  n325_11,
+  fontAddress,
+  charCode_1_95,
+  charCode_3_106,
+  charCode_4_118,
+  charCode_5_96,
+  charCode_6_100,
+  charCode_3_109,
+  charCode_3_110,
+  charCode_3_111
+)
+;
+input clk_d;
+input n540_13;
+input n539_12;
+input n544_8;
+input n327_13;
+input n327_15;
+input n544_6;
+input n542_10;
+input n544_11;
+input [7:0] charBitInRow;
+input xCoord_d_0;
+input xCoord_d_1;
+input xCoord_d_2;
+input xCoord_d_3;
+input xCoord_d_4;
+input xCoord_d_5;
+input xCoord_d_6;
+input xCoord_d_7;
+input xCoord_d_8;
+input xCoord_d_11;
+input [6:0] charCode;
+input [11:5] yCoord_d;
+input charCode_5_110;
+input charCode_5_100;
+input charCode_4_111;
+input charCode_1_88;
+input charCode_4_117;
+input charCode_6_93;
+input charCode_4_107;
+input charCode_5_104;
+input charCode_0_114;
+input charCode_5_105;
+input charCode_4_109;
+input charCode_4_113;
+input charCode_5_102;
+output d3;
+output n325_11;
+output [10:4] fontAddress;
+output charCode_1_95;
+output charCode_3_106;
+output charCode_4_118;
+output charCode_5_96;
+output charCode_6_100;
+output charCode_3_109;
+output charCode_3_110;
+output charCode_3_111;
+wire n544_20;
+wire n544_21;
+wire n544_22;
+wire n544_23;
+wire n545_4;
+wire n324_9;
+wire n326_11;
+wire n323_11;
+wire n322_11;
+wire n321_9;
+wire charCode_6_101;
+wire charCode_5_94;
+wire charCode_5_95;
+wire charCode_4_117_5;
+wire charCode_4_119;
+wire charCode_3_107;
+wire charCode_3_108;
+wire charCode_2_102;
+wire charCode_2_103;
+wire charCode_1_94;
+wire charCode_0_114_6;
+wire charCode_0_115;
+wire charCode_0_116;
+wire n545_5;
+wire n545_6;
+wire n545_7;
+wire charCode_6_102;
+wire charCode_4_120;
+wire charCode_1_96;
+wire charCode_0_117;
+wire n545_8;
+wire n545_9;
+wire n545_10;
+wire charCode_4_123;
+wire n327_14;
+wire fontAddress_4_3;
+wire fontAddress_5_3;
+wire fontAddress_6_3;
+wire fontAddress_7_3;
+wire fontAddress_8_3;
+wire fontAddress_9_3;
+wire fontAddress_10_0_COUT;
+wire n544_25;
+wire n544_27;
+wire n544_29;
+wire [6:0] charCode_0;
+wire VCC;
+wire GND;
+  LUT3 n544_s24 (
+    .F(n544_20),
+    .I0(charBitInRow[0]),
+    .I1(charBitInRow[1]),
+    .I2(xCoord_d_0) 
+);
+defparam n544_s24.INIT=8'hCA;
+  LUT3 n544_s25 (
+    .F(n544_21),
+    .I0(charBitInRow[2]),
+    .I1(charBitInRow[3]),
+    .I2(xCoord_d_0) 
+);
+defparam n544_s25.INIT=8'hCA;
+  LUT3 n544_s26 (
+    .F(n544_22),
+    .I0(charBitInRow[4]),
+    .I1(charBitInRow[5]),
+    .I2(xCoord_d_0) 
+);
+defparam n544_s26.INIT=8'hCA;
+  LUT3 n544_s27 (
+    .F(n544_23),
+    .I0(charBitInRow[6]),
+    .I1(charBitInRow[7]),
+    .I2(xCoord_d_0) 
+);
+defparam n544_s27.INIT=8'hCA;
+  LUT4 charCode_5_s76 (
+    .F(charCode_0[5]),
+    .I0(charCode_5_94),
+    .I1(charCode[5]),
+    .I2(charCode_5_110),
+    .I3(charCode_5_95) 
+);
+defparam charCode_5_s76.INIT=16'hFFF4;
+  LUT4 charCode_4_s88 (
+    .F(charCode_0[4]),
+    .I0(charCode[5]),
+    .I1(charCode_4_117_5),
+    .I2(charCode_4_118),
+    .I3(charCode_4_119) 
+);
+defparam charCode_4_s88.INIT=16'hFFF2;
+  LUT4 charCode_3_s82 (
+    .F(charCode_0[3]),
+    .I0(charCode_3_106),
+    .I1(charCode_3_107),
+    .I2(charCode[3]),
+    .I3(charCode_3_108) 
+);
+defparam charCode_3_s82.INIT=16'hFFF4;
+  LUT4 charCode_2_s80 (
+    .F(charCode_0[2]),
+    .I0(charCode[5]),
+    .I1(charCode_2_102),
+    .I2(charCode[2]),
+    .I3(charCode_2_103) 
+);
+defparam charCode_2_s80.INIT=16'hFFF2;
+  LUT2 charCode_1_s76 (
+    .F(charCode_0[1]),
+    .I0(charCode_1_94),
+    .I1(charCode_1_95) 
+);
+defparam charCode_1_s76.INIT=4'hE;
+  LUT3 charCode_0_s86 (
+    .F(charCode_0[0]),
+    .I0(charCode_0_114_6),
+    .I1(charCode_0_115),
+    .I2(charCode_0_116) 
+);
+defparam charCode_0_s86.INIT=8'hF1;
+  LUT4 n545_s1 (
+    .F(n545_4),
+    .I0(n545_5),
+    .I1(n544_8),
+    .I2(n545_6),
+    .I3(n545_7) 
+);
+defparam n545_s1.INIT=16'h7FFF;
+  LUT4 n324_s3 (
+    .F(n324_9),
+    .I0(yCoord_d[6]),
+    .I1(yCoord_d[5]),
+    .I2(n327_13),
+    .I3(yCoord_d[7]) 
+);
+defparam n324_s3.INIT=16'h10EF;
+  LUT2 n326_s4 (
+    .F(n326_11),
+    .I0(yCoord_d[5]),
+    .I1(n327_13) 
+);
+defparam n326_s4.INIT=4'h6;
+  LUT3 n325_s4 (
+    .F(n325_11),
+    .I0(yCoord_d[5]),
+    .I1(n327_13),
+    .I2(yCoord_d[6]) 
+);
+defparam n325_s4.INIT=8'hB4;
+  LUT2 n323_s4 (
+    .F(n323_11),
+    .I0(yCoord_d[8]),
+    .I1(n545_6) 
+);
+defparam n323_s4.INIT=4'h9;
+  LUT3 n322_s4 (
+    .F(n322_11),
+    .I0(yCoord_d[8]),
+    .I1(n545_6),
+    .I2(yCoord_d[9]) 
+);
+defparam n322_s4.INIT=8'hE1;
+  LUT4 n321_s3 (
+    .F(n321_9),
+    .I0(yCoord_d[8]),
+    .I1(yCoord_d[9]),
+    .I2(n545_6),
+    .I3(yCoord_d[10]) 
+);
+defparam n321_s3.INIT=16'hFE01;
+  LUT3 charCode_6_s80 (
+    .F(charCode_6_100),
+    .I0(xCoord_d_7),
+    .I1(charCode[1]),
+    .I2(xCoord_d_8) 
+);
+defparam charCode_6_s80.INIT=8'h1E;
+  LUT4 charCode_6_s81 (
+    .F(charCode_6_101),
+    .I0(charCode[1]),
+    .I1(charCode_6_102),
+    .I2(charCode[4]),
+    .I3(charCode[6]) 
+);
+defparam charCode_6_s81.INIT=16'h8ED4;
+  LUT4 charCode_5_s77 (
+    .F(charCode_5_94),
+    .I0(charCode_5_100),
+    .I1(charCode_4_111),
+    .I2(charCode_3_106),
+    .I3(charCode_1_88) 
+);
+defparam charCode_5_s77.INIT=16'h0008;
+  LUT4 charCode_5_s78 (
+    .F(charCode_5_95),
+    .I0(charCode_5_100),
+    .I1(charCode_5_96),
+    .I2(charCode_4_111),
+    .I3(charCode_0_114_6) 
+);
+defparam charCode_5_s78.INIT=16'h002F;
+  LUT4 charCode_4_s89 (
+    .F(charCode_4_117_5),
+    .I0(charCode_4_111),
+    .I1(charCode_1_88),
+    .I2(charCode_3_106),
+    .I3(charCode_5_100) 
+);
+defparam charCode_4_s89.INIT=16'hFCA3;
+  LUT4 charCode_4_s90 (
+    .F(charCode_4_118),
+    .I0(charCode_4_117),
+    .I1(charCode_4_120),
+    .I2(charCode_4_111),
+    .I3(charCode_6_93) 
+);
+defparam charCode_4_s90.INIT=16'h5300;
+  LUT4 charCode_4_s91 (
+    .F(charCode_4_119),
+    .I0(charCode_3_106),
+    .I1(charCode_4_111),
+    .I2(charCode_4_123),
+    .I3(charCode_0_114_6) 
+);
+defparam charCode_4_s91.INIT=16'h00B2;
+  LUT4 charCode_3_s83 (
+    .F(charCode_3_106),
+    .I0(xCoord_d_11),
+    .I1(charCode_3_109),
+    .I2(charCode_3_110),
+    .I3(charCode_3_111) 
+);
+defparam charCode_3_s83.INIT=16'hF10E;
+  LUT4 charCode_3_s84 (
+    .F(charCode_3_107),
+    .I0(charCode_0_114_6),
+    .I1(charCode_1_88),
+    .I2(charCode_5_100),
+    .I3(charCode_4_111) 
+);
+defparam charCode_3_s84.INIT=16'h4014;
+  LUT4 charCode_3_s85 (
+    .F(charCode_3_108),
+    .I0(charCode_5_96),
+    .I1(charCode_5_100),
+    .I2(charCode_4_111),
+    .I3(charCode[5]) 
+);
+defparam charCode_3_s85.INIT=16'hD000;
+  LUT4 charCode_2_s81 (
+    .F(charCode_2_102),
+    .I0(charCode_4_111),
+    .I1(charCode_1_88),
+    .I2(charCode_3_106),
+    .I3(charCode_5_100) 
+);
+defparam charCode_2_s81.INIT=16'hACD3;
+  LUT4 charCode_2_s82 (
+    .F(charCode_2_103),
+    .I0(charCode_1_88),
+    .I1(charCode_5_100),
+    .I2(charCode_3_106),
+    .I3(charCode_4_107) 
+);
+defparam charCode_2_s82.INIT=16'hC200;
+  LUT4 charCode_1_s77 (
+    .F(charCode_1_94),
+    .I0(charCode_1_88),
+    .I1(charCode_3_106),
+    .I2(charCode_5_104),
+    .I3(charCode_4_107) 
+);
+defparam charCode_1_s77.INIT=16'h0800;
+  LUT4 charCode_1_s78 (
+    .F(charCode_1_95),
+    .I0(charCode_6_100),
+    .I1(charCode_1_96),
+    .I2(charCode_4_111),
+    .I3(charCode_5_100) 
+);
+defparam charCode_1_s78.INIT=16'h2008;
+  LUT3 charCode_0_s87 (
+    .F(charCode_0_114_6),
+    .I0(charCode[1]),
+    .I1(charCode[4]),
+    .I2(charCode_6_100) 
+);
+defparam charCode_0_s87.INIT=8'hBD;
+  LUT4 charCode_0_s88 (
+    .F(charCode_0_115),
+    .I0(charCode_5_100),
+    .I1(charCode_1_88),
+    .I2(charCode_4_111),
+    .I3(charCode_3_106) 
+);
+defparam charCode_0_s88.INIT=16'hF37E;
+  LUT4 charCode_0_s89 (
+    .F(charCode_0_116),
+    .I0(charCode[0]),
+    .I1(charCode_0_114),
+    .I2(charCode_6_100),
+    .I3(charCode_0_117) 
+);
+defparam charCode_0_s89.INIT=16'hA030;
+  LUT4 n545_s2 (
+    .F(n545_5),
+    .I0(yCoord_d[6]),
+    .I1(yCoord_d[5]),
+    .I2(n327_15),
+    .I3(n544_6) 
+);
+defparam n545_s2.INIT=16'h0100;
+  LUT4 n545_s3 (
+    .F(n545_6),
+    .I0(yCoord_d[6]),
+    .I1(yCoord_d[5]),
+    .I2(n327_13),
+    .I3(yCoord_d[7]) 
+);
+defparam n545_s3.INIT=16'hEF00;
+  LUT4 n545_s4 (
+    .F(n545_7),
+    .I0(yCoord_d[8]),
+    .I1(yCoord_d[9]),
+    .I2(n545_8),
+    .I3(n545_9) 
+);
+defparam n545_s4.INIT=16'h0100;
+  LUT4 charCode_6_s82 (
+    .F(charCode_6_102),
+    .I0(charCode_4_111),
+    .I1(charCode_1_88),
+    .I2(charCode_3_106),
+    .I3(charCode_5_100) 
+);
+defparam charCode_6_s82.INIT=16'hBC6B;
+  LUT2 charCode_5_s79 (
+    .F(charCode_5_96),
+    .I0(charCode_1_88),
+    .I1(charCode_3_106) 
+);
+defparam charCode_5_s79.INIT=4'h9;
+  LUT4 charCode_4_s92 (
+    .F(charCode_4_120),
+    .I0(charCode_5_105),
+    .I1(charCode_3_111),
+    .I2(charCode_1_88),
+    .I3(charCode_4_109) 
+);
+defparam charCode_4_s92.INIT=16'h8F76;
+  LUT4 charCode_3_s86 (
+    .F(charCode_3_109),
+    .I0(charCode_4_113),
+    .I1(xCoord_d_5),
+    .I2(xCoord_d_6),
+    .I3(n542_10) 
+);
+defparam charCode_3_s86.INIT=16'h0700;
+  LUT4 charCode_3_s87 (
+    .F(charCode_3_110),
+    .I0(xCoord_d_0),
+    .I1(xCoord_d_2),
+    .I2(xCoord_d_1),
+    .I3(xCoord_d_3) 
+);
+defparam charCode_3_s87.INIT=16'h13FC;
+  LUT4 charCode_3_s88 (
+    .F(charCode_3_111),
+    .I0(xCoord_d_1),
+    .I1(xCoord_d_2),
+    .I2(xCoord_d_3),
+    .I3(xCoord_d_4) 
+);
+defparam charCode_3_s88.INIT=16'h01FE;
+  LUT4 charCode_1_s79 (
+    .F(charCode_1_96),
+    .I0(charCode_4_111),
+    .I1(charCode_1_88),
+    .I2(charCode_3_106),
+    .I3(charCode_5_102) 
+);
+defparam charCode_1_s79.INIT=16'hC378;
+  LUT4 charCode_0_s90 (
+    .F(charCode_0_117),
+    .I0(charCode_3_106),
+    .I1(charCode_4_123),
+    .I2(charCode_5_102),
+    .I3(charCode_4_111) 
+);
+defparam charCode_0_s90.INIT=16'h0CF5;
+  LUT4 n545_s5 (
+    .F(n545_8),
+    .I0(n544_11),
+    .I1(xCoord_d_4),
+    .I2(xCoord_d_6),
+    .I3(n545_10) 
+);
+defparam n545_s5.INIT=16'h4000;
+  LUT4 n545_s6 (
+    .F(n545_9),
+    .I0(xCoord_d_7),
+    .I1(xCoord_d_8),
+    .I2(yCoord_d[10]),
+    .I3(yCoord_d[11]) 
+);
+defparam n545_s6.INIT=16'h0007;
+  LUT3 n545_s7 (
+    .F(n545_10),
+    .I0(xCoord_d_8),
+    .I1(xCoord_d_3),
+    .I2(xCoord_d_5) 
+);
+defparam n545_s7.INIT=8'h80;
+  LUT3 charCode_4_s94 (
+    .F(charCode_4_123),
+    .I0(charCode_1_88),
+    .I1(xCoord_d_5),
+    .I2(charCode_4_113) 
+);
+defparam charCode_4_s94.INIT=8'h14;
+  LUT4 charCode_6_s83 (
+    .F(charCode_0[6]),
+    .I0(xCoord_d_7),
+    .I1(charCode[1]),
+    .I2(xCoord_d_8),
+    .I3(charCode_6_101) 
+);
+defparam charCode_6_s83.INIT=16'h001E;
+  LUT2 n327_s6 (
+    .F(n327_14),
+    .I0(n327_15),
+    .I1(n327_13) 
+);
+defparam n327_s6.INIT=4'hE;
+  DFFR pixel_s0 (
+    .Q(d3),
+    .D(n544_29),
+    .CLK(clk_d),
+    .RESET(n545_4) 
+);
+defparam pixel_s0.INIT=1'b0;
+  ALU fontAddress_4_s (
+    .SUM(fontAddress[4]),
+    .COUT(fontAddress_4_3),
+    .I0(charCode_0[0]),
+    .I1(n327_14),
+    .I3(GND),
+    .CIN(GND) 
+);
+defparam fontAddress_4_s.ALU_MODE=0;
+  ALU fontAddress_5_s (
+    .SUM(fontAddress[5]),
+    .COUT(fontAddress_5_3),
+    .I0(charCode_0[1]),
+    .I1(n326_11),
+    .I3(GND),
+    .CIN(fontAddress_4_3) 
+);
+defparam fontAddress_5_s.ALU_MODE=0;
+  ALU fontAddress_6_s (
+    .SUM(fontAddress[6]),
+    .COUT(fontAddress_6_3),
+    .I0(charCode_0[2]),
+    .I1(n325_11),
+    .I3(GND),
+    .CIN(fontAddress_5_3) 
+);
+defparam fontAddress_6_s.ALU_MODE=0;
+  ALU fontAddress_7_s (
+    .SUM(fontAddress[7]),
+    .COUT(fontAddress_7_3),
+    .I0(charCode_0[3]),
+    .I1(n324_9),
+    .I3(GND),
+    .CIN(fontAddress_6_3) 
+);
+defparam fontAddress_7_s.ALU_MODE=0;
+  ALU fontAddress_8_s (
+    .SUM(fontAddress[8]),
+    .COUT(fontAddress_8_3),
+    .I0(charCode_0[4]),
+    .I1(n323_11),
+    .I3(GND),
+    .CIN(fontAddress_7_3) 
+);
+defparam fontAddress_8_s.ALU_MODE=0;
+  ALU fontAddress_9_s (
+    .SUM(fontAddress[9]),
+    .COUT(fontAddress_9_3),
+    .I0(charCode_0[5]),
+    .I1(n322_11),
+    .I3(GND),
+    .CIN(fontAddress_8_3) 
+);
+defparam fontAddress_9_s.ALU_MODE=0;
+  ALU fontAddress_10_s (
+    .SUM(fontAddress[10]),
+    .COUT(fontAddress_10_0_COUT),
+    .I0(charCode_0[6]),
+    .I1(n321_9),
+    .I3(GND),
+    .CIN(fontAddress_9_3) 
+);
+defparam fontAddress_10_s.ALU_MODE=0;
+  MUX2_LUT5 n544_s22 (
+    .O(n544_25),
+    .I0(n544_20),
+    .I1(n544_21),
+    .S0(n540_13) 
+);
+  MUX2_LUT5 n544_s23 (
+    .O(n544_27),
+    .I0(n544_22),
+    .I1(n544_23),
+    .S0(n540_13) 
+);
+  MUX2_LUT6 n544_s21 (
+    .O(n544_29),
+    .I0(n544_25),
+    .I1(n544_27),
+    .S0(n539_12) 
+);
+  VCC VCC_cZ (
+    .V(VCC)
+);
+  GND GND_cZ (
+    .G(GND)
+);
+endmodule /* Pixel_On_Text_1 */
+module Pixel_On_Text_2 (
+  clk_d,
+  n540_13,
+  n544_6,
+  n544_10,
+  n542_6,
+  charBitInRow,
+  xCoord_d,
+  yCoord_d,
+  charCode,
+  charCode_5_98,
+  charCode_6_110,
+  charCode_6_104,
+  d4,
+  n325_9,
+  n537_10,
+  n326_11,
+  n323_11,
+  n322_11,
+  n321_9,
+  n542_6_7,
+  n542_7,
+  n542_8,
+  n542_10,
+  n324_14,
+  n327_11,
+  fontAddress,
+  charCode_1_97,
+  charCode_4_124,
+  charCode_5_102,
+  charCode_6_105,
+  charCode_6_115,
+  charCode_6_117,
+  charCode_5_108
+)
+;
+input clk_d;
+input n540_13;
+input n544_6;
+input n544_10;
+input n542_6;
+input [7:0] charBitInRow;
+input [11:0] xCoord_d;
+input [10:1] yCoord_d;
+input [6:5] charCode;
+input charCode_5_98;
+input charCode_6_110;
+input charCode_6_104;
+output d4;
+output n325_9;
+output n537_10;
+output n326_11;
+output n323_11;
+output n322_11;
+output n321_9;
+output n542_6_7;
+output n542_7;
+output n542_8;
+output n542_10;
+output n324_14;
+output n327_11;
+output [10:3] fontAddress;
+output charCode_1_97;
+output charCode_4_124;
+output charCode_5_102;
+output charCode_6_105;
+output charCode_6_115;
+output charCode_6_117;
+output charCode_5_108;
+wire n541_20;
+wire n541_21;
+wire n541_22;
+wire n541_23;
+wire n542_4;
+wire charCode_6_100;
+wire charCode_6_102;
+wire charCode_6_103;
+wire charCode_5_96;
+wire charCode_5_97;
+wire charCode_5_98_9;
+wire charCode_5_99;
+wire charCode_4_113;
+wire charCode_4_114;
+wire charCode_4_115;
+wire charCode_3_106;
+wire charCode_3_107;
+wire charCode_2_102;
+wire charCode_2_103;
+wire charCode_1_94;
+wire charCode_1_95;
+wire charCode_0_116;
+wire charCode_0_117;
+wire n542_5;
+wire fontAddress_3_10;
+wire n324_12;
+wire n321_10;
+wire charCode_6_104_10;
+wire charCode_6_106;
+wire charCode_6_107;
+wire charCode_6_108;
+wire charCode_6_109;
+wire charCode_5_101;
+wire charCode_4_117;
+wire charCode_4_118;
+wire charCode_4_119;
+wire charCode_4_120;
+wire charCode_4_121;
+wire charCode_3_108;
+wire charCode_3_109;
+wire charCode_3_110;
+wire charCode_2_104;
+wire charCode_2_105;
+wire charCode_2_106;
+wire charCode_1_96;
+wire charCode_0_118;
+wire charCode_0_119;
+wire n542_9;
+wire n542_11;
+wire charCode_5_104;
+wire charCode_6_113;
+wire charCode_5_106;
+wire n325_12;
+wire charCode_3_113;
+wire charCode_4_126;
+wire fontAddress_4_3;
+wire fontAddress_5_3;
+wire fontAddress_6_3;
+wire fontAddress_7_3;
+wire fontAddress_8_3;
+wire fontAddress_9_3;
+wire fontAddress_10_0_COUT;
+wire n541_25;
+wire n541_27;
+wire n541_29;
+wire [6:0] charCode_0;
+wire VCC;
+wire GND;
+  LUT3 n541_s24 (
+    .F(n541_20),
+    .I0(charBitInRow[0]),
+    .I1(charBitInRow[1]),
+    .I2(xCoord_d[0]) 
+);
+defparam n541_s24.INIT=8'hCA;
+  LUT3 n541_s25 (
+    .F(n541_21),
+    .I0(charBitInRow[2]),
+    .I1(charBitInRow[3]),
+    .I2(xCoord_d[0]) 
+);
+defparam n541_s25.INIT=8'hCA;
+  LUT3 n541_s26 (
+    .F(n541_22),
+    .I0(charBitInRow[4]),
+    .I1(charBitInRow[5]),
+    .I2(xCoord_d[0]) 
+);
+defparam n541_s26.INIT=8'hCA;
+  LUT3 n541_s27 (
+    .F(n541_23),
+    .I0(charBitInRow[6]),
+    .I1(charBitInRow[7]),
+    .I2(xCoord_d[0]) 
+);
+defparam n541_s27.INIT=8'hCA;
+  LUT4 charCode_6_s79 (
+    .F(charCode_0[6]),
+    .I0(charCode_6_100),
+    .I1(charCode_6_113),
+    .I2(charCode_6_102),
+    .I3(charCode_6_103) 
+);
+defparam charCode_6_s79.INIT=16'hFF80;
+  LUT4 charCode_5_s77 (
+    .F(charCode_0[5]),
+    .I0(charCode_5_96),
+    .I1(charCode_5_97),
+    .I2(charCode_5_98_9),
+    .I3(charCode_5_99) 
+);
+defparam charCode_5_s77.INIT=16'h888F;
+  LUT4 charCode_4_s86 (
+    .F(charCode_0[4]),
+    .I0(charCode_5_99),
+    .I1(charCode_4_113),
+    .I2(charCode_4_114),
+    .I3(charCode_4_115) 
+);
+defparam charCode_4_s86.INIT=16'hFF01;
+  LUT4 charCode_3_s82 (
+    .F(charCode_0[3]),
+    .I0(charCode_5_96),
+    .I1(charCode_3_106),
+    .I2(charCode_3_107),
+    .I3(charCode_5_99) 
+);
+defparam charCode_3_s82.INIT=16'h222F;
+  LUT4 charCode_2_s80 (
+    .F(charCode_0[2]),
+    .I0(charCode_5_99),
+    .I1(charCode_2_102),
+    .I2(charCode_4_114),
+    .I3(charCode_2_103) 
+);
+defparam charCode_2_s80.INIT=16'hFF01;
+  LUT3 charCode_1_s76 (
+    .F(charCode_0[1]),
+    .I0(charCode_1_94),
+    .I1(charCode_1_95),
+    .I2(charCode_5_96) 
+);
+defparam charCode_1_s76.INIT=8'hAC;
+  LUT3 charCode_0_s87 (
+    .F(charCode_0[0]),
+    .I0(charCode_5_99),
+    .I1(charCode_0_116),
+    .I2(charCode_0_117) 
+);
+defparam charCode_0_s87.INIT=8'hF1;
+  LUT4 n542_s1 (
+    .F(n542_4),
+    .I0(n542_5),
+    .I1(xCoord_d[11]),
+    .I2(n542_6_7),
+    .I3(n542_7) 
+);
+defparam n542_s1.INIT=16'hFEFF;
+  LUT3 n325_s3 (
+    .F(n325_9),
+    .I0(yCoord_d[5]),
+    .I1(n325_12),
+    .I2(yCoord_d[6]) 
+);
+defparam n325_s3.INIT=8'h1E;
+  LUT3 n537_s4 (
+    .F(n537_10),
+    .I0(xCoord_d[0]),
+    .I1(xCoord_d[1]),
+    .I2(xCoord_d[2]) 
+);
+defparam n537_s4.INIT=8'h87;
+  LUT2 n326_s4 (
+    .F(n326_11),
+    .I0(yCoord_d[5]),
+    .I1(n325_12) 
+);
+defparam n326_s4.INIT=4'h9;
+  LUT3 n323_s4 (
+    .F(n323_11),
+    .I0(yCoord_d[7]),
+    .I1(n324_12),
+    .I2(yCoord_d[8]) 
+);
+defparam n323_s4.INIT=8'hE1;
+  LUT4 n322_s4 (
+    .F(n322_11),
+    .I0(yCoord_d[7]),
+    .I1(yCoord_d[8]),
+    .I2(n324_12),
+    .I3(yCoord_d[9]) 
+);
+defparam n322_s4.INIT=16'hFE01;
+  LUT2 n321_s3 (
+    .F(n321_9),
+    .I0(n321_10),
+    .I1(yCoord_d[10]) 
+);
+defparam n321_s3.INIT=4'h6;
+  LUT3 charCode_6_s80 (
+    .F(charCode_6_100),
+    .I0(xCoord_d[7]),
+    .I1(charCode_6_104_10),
+    .I2(xCoord_d[8]) 
+);
+defparam charCode_6_s80.INIT=8'h1E;
+  LUT2 charCode_6_s82 (
+    .F(charCode_6_102),
+    .I0(charCode_6_105),
+    .I1(charCode_6_106) 
+);
+defparam charCode_6_s82.INIT=4'h8;
+  LUT4 charCode_6_s83 (
+    .F(charCode_6_103),
+    .I0(charCode_6_107),
+    .I1(charCode_6_108),
+    .I2(charCode_5_96),
+    .I3(charCode_6_109) 
+);
+defparam charCode_6_s83.INIT=16'h5030;
+  LUT3 charCode_5_s78 (
+    .F(charCode_5_96),
+    .I0(charCode_6_113),
+    .I1(charCode_5_106),
+    .I2(charCode_6_100) 
+);
+defparam charCode_5_s78.INIT=8'h78;
+  LUT4 charCode_5_s79 (
+    .F(charCode_5_97),
+    .I0(charCode_4_114),
+    .I1(charCode_6_109),
+    .I2(charCode_6_105),
+    .I3(charCode_5_101) 
+);
+defparam charCode_5_s79.INIT=16'hEF5C;
+  LUT4 charCode_5_s80 (
+    .F(charCode_5_98_9),
+    .I0(charCode_6_105),
+    .I1(charCode_5_102),
+    .I2(charCode_5_108),
+    .I3(charCode_4_114) 
+);
+defparam charCode_5_s80.INIT=16'hFD00;
+  LUT4 charCode_5_s81 (
+    .F(charCode_5_99),
+    .I0(charCode_6_102),
+    .I1(charCode_5_106),
+    .I2(charCode_6_113),
+    .I3(charCode_6_100) 
+);
+defparam charCode_5_s81.INIT=16'h17FE;
+  LUT3 charCode_4_s87 (
+    .F(charCode_4_113),
+    .I0(charCode_4_126),
+    .I1(charCode_6_105),
+    .I2(charCode_4_117) 
+);
+defparam charCode_4_s87.INIT=8'hB0;
+  LUT4 charCode_4_s88 (
+    .F(charCode_4_114),
+    .I0(charCode_4_118),
+    .I1(xCoord_d[5]),
+    .I2(xCoord_d[6]),
+    .I3(charCode_4_119) 
+);
+defparam charCode_4_s88.INIT=16'h1E87;
+  LUT4 charCode_4_s89 (
+    .F(charCode_4_115),
+    .I0(charCode_4_120),
+    .I1(charCode_4_121),
+    .I2(charCode_5_96),
+    .I3(charCode_6_109) 
+);
+defparam charCode_4_s89.INIT=16'h3050;
+  LUT4 charCode_3_s83 (
+    .F(charCode_3_106),
+    .I0(charCode_3_108),
+    .I1(charCode_3_109),
+    .I2(charCode_6_109),
+    .I3(charCode_3_110) 
+);
+defparam charCode_3_s83.INIT=16'h4353;
+  LUT4 charCode_3_s84 (
+    .F(charCode_3_107),
+    .I0(charCode_6_105),
+    .I1(charCode_4_126),
+    .I2(charCode_4_117),
+    .I3(charCode_4_114) 
+);
+defparam charCode_3_s84.INIT=16'hF74F;
+  LUT3 charCode_2_s81 (
+    .F(charCode_2_102),
+    .I0(charCode_6_105),
+    .I1(charCode_4_117),
+    .I2(charCode_4_126) 
+);
+defparam charCode_2_s81.INIT=8'hCB;
+  LUT4 charCode_2_s82 (
+    .F(charCode_2_103),
+    .I0(charCode_2_104),
+    .I1(charCode_5_96),
+    .I2(charCode_2_105),
+    .I3(charCode_2_106) 
+);
+defparam charCode_2_s82.INIT=16'h0004;
+  LUT4 charCode_1_s77 (
+    .F(charCode_1_94),
+    .I0(charCode_5_102),
+    .I1(charCode_6_109),
+    .I2(charCode_1_96),
+    .I3(charCode_1_97) 
+);
+defparam charCode_1_s77.INIT=16'h00B0;
+  LUT3 charCode_1_s78 (
+    .F(charCode_1_95),
+    .I0(charCode_4_114),
+    .I1(charCode_6_109),
+    .I2(charCode[6]) 
+);
+defparam charCode_1_s78.INIT=8'h10;
+  LUT4 charCode_0_s88 (
+    .F(charCode_0_116),
+    .I0(charCode_6_105),
+    .I1(charCode_4_117),
+    .I2(charCode_4_114),
+    .I3(charCode_5_102) 
+);
+defparam charCode_0_s88.INIT=16'hFED7;
+  LUT4 charCode_0_s89 (
+    .F(charCode_0_117),
+    .I0(charCode_0_118),
+    .I1(charCode_0_119),
+    .I2(charCode_5_96),
+    .I3(charCode_6_109) 
+);
+defparam charCode_0_s89.INIT=16'hA0C0;
+  LUT4 n542_s2 (
+    .F(n542_5),
+    .I0(n542_8),
+    .I1(n542_9),
+    .I2(xCoord_d[8]),
+    .I3(xCoord_d[7]) 
+);
+defparam n542_s2.INIT=16'h7000;
+  LUT4 n542_s3 (
+    .F(n542_6_7),
+    .I0(xCoord_d[5]),
+    .I1(n542_9),
+    .I2(xCoord_d[6]),
+    .I3(n542_10) 
+);
+defparam n542_s3.INIT=16'h4F00;
+  LUT4 n542_s4 (
+    .F(n542_7),
+    .I0(n542_11),
+    .I1(yCoord_d[6]),
+    .I2(n544_6),
+    .I3(n544_10) 
+);
+defparam n542_s4.INIT=16'h4000;
+  LUT2 fontAddress_3_s4 (
+    .F(fontAddress_3_10),
+    .I0(yCoord_d[1]),
+    .I1(yCoord_d[2]) 
+);
+defparam fontAddress_3_s4.INIT=4'h1;
+  LUT3 n324_s5 (
+    .F(n324_12),
+    .I0(n325_12),
+    .I1(yCoord_d[5]),
+    .I2(yCoord_d[6]) 
+);
+defparam n324_s5.INIT=8'hE0;
+  LUT4 n321_s4 (
+    .F(n321_10),
+    .I0(yCoord_d[7]),
+    .I1(yCoord_d[8]),
+    .I2(yCoord_d[9]),
+    .I3(n324_12) 
+);
+defparam n321_s4.INIT=16'h0001;
+  LUT3 charCode_6_s84 (
+    .F(charCode_6_104_10),
+    .I0(n542_9),
+    .I1(xCoord_d[5]),
+    .I2(xCoord_d[6]) 
+);
+defparam charCode_6_s84.INIT=8'hD0;
+  LUT4 charCode_6_s85 (
+    .F(charCode_6_105),
+    .I0(xCoord_d[11]),
+    .I1(n542_6_7),
+    .I2(charCode_6_117),
+    .I3(charCode_6_115) 
+);
+defparam charCode_6_s85.INIT=16'hF10E;
+  LUT4 charCode_6_s86 (
+    .F(charCode_6_106),
+    .I0(xCoord_d[6]),
+    .I1(n542_9),
+    .I2(xCoord_d[5]),
+    .I3(charCode_5_108) 
+);
+defparam charCode_6_s86.INIT=16'h0018;
+  LUT4 charCode_6_s87 (
+    .F(charCode_6_107),
+    .I0(charCode_4_114),
+    .I1(charCode_4_117),
+    .I2(charCode_6_105),
+    .I3(charCode_4_126) 
+);
+defparam charCode_6_s87.INIT=16'h3EE9;
+  LUT4 charCode_6_s88 (
+    .F(charCode_6_108),
+    .I0(charCode_6_105),
+    .I1(charCode_4_114),
+    .I2(charCode_4_117),
+    .I3(charCode_5_102) 
+);
+defparam charCode_6_s88.INIT=16'h0086;
+  LUT4 charCode_6_s89 (
+    .F(charCode_6_109),
+    .I0(charCode_6_105),
+    .I1(charCode[5]),
+    .I2(charCode_6_106),
+    .I3(charCode_6_113) 
+);
+defparam charCode_6_s89.INIT=16'h1FE0;
+  LUT3 charCode_5_s83 (
+    .F(charCode_5_101),
+    .I0(charCode_4_114),
+    .I1(charCode_4_117),
+    .I2(charCode_4_126) 
+);
+defparam charCode_5_s83.INIT=8'h3E;
+  LUT2 charCode_5_s84 (
+    .F(charCode_5_102),
+    .I0(xCoord_d[5]),
+    .I1(n542_9) 
+);
+defparam charCode_5_s84.INIT=4'h9;
+  LUT4 charCode_4_s91 (
+    .F(charCode_4_117),
+    .I0(n542_6_7),
+    .I1(charCode_4_124),
+    .I2(xCoord_d[11]),
+    .I3(charCode_5_108) 
+);
+defparam charCode_4_s91.INIT=16'hCF32;
+  LUT4 charCode_4_s92 (
+    .F(charCode_4_118),
+    .I0(xCoord_d[5]),
+    .I1(xCoord_d[4]),
+    .I2(xCoord_d[3]),
+    .I3(charCode_5_104) 
+);
+defparam charCode_4_s92.INIT=16'hDDD4;
+  LUT3 charCode_4_s93 (
+    .F(charCode_4_119),
+    .I0(xCoord_d[11]),
+    .I1(charCode_6_117),
+    .I2(charCode_6_115) 
+);
+defparam charCode_4_s93.INIT=8'h0D;
+  LUT4 charCode_4_s94 (
+    .F(charCode_4_120),
+    .I0(charCode_6_105),
+    .I1(charCode_4_117),
+    .I2(charCode_4_126),
+    .I3(charCode_4_114) 
+);
+defparam charCode_4_s94.INIT=16'h39A7;
+  LUT4 charCode_4_s95 (
+    .F(charCode_4_121),
+    .I0(charCode_4_114),
+    .I1(charCode_6_105),
+    .I2(charCode_4_117),
+    .I3(charCode_4_126) 
+);
+defparam charCode_4_s95.INIT=16'h3FCA;
+  LUT4 charCode_3_s85 (
+    .F(charCode_3_108),
+    .I0(charCode_3_113),
+    .I1(charCode_4_126),
+    .I2(charCode_5_98),
+    .I3(charCode_4_114) 
+);
+defparam charCode_3_s85.INIT=16'hEF00;
+  LUT4 charCode_3_s86 (
+    .F(charCode_3_109),
+    .I0(charCode_4_126),
+    .I1(charCode_6_105),
+    .I2(charCode_4_114),
+    .I3(charCode_4_117) 
+);
+defparam charCode_3_s86.INIT=16'h2DD3;
+  LUT4 charCode_3_s87 (
+    .F(charCode_3_110),
+    .I0(charCode_6_105),
+    .I1(charCode_5_108),
+    .I2(charCode_5_102),
+    .I3(charCode[5]) 
+);
+defparam charCode_3_s87.INIT=16'h7C97;
+  LUT4 charCode_2_s83 (
+    .F(charCode_2_104),
+    .I0(charCode_4_114),
+    .I1(charCode_6_109),
+    .I2(charCode_3_113),
+    .I3(charCode_5_98) 
+);
+defparam charCode_2_s83.INIT=16'h0800;
+  LUT4 charCode_2_s84 (
+    .F(charCode_2_105),
+    .I0(charCode_3_110),
+    .I1(charCode_6_113),
+    .I2(charCode_5_106),
+    .I3(charCode_4_114) 
+);
+defparam charCode_2_s84.INIT=16'h0014;
+  LUT4 charCode_2_s85 (
+    .F(charCode_2_106),
+    .I0(charCode_4_126),
+    .I1(charCode_6_105),
+    .I2(charCode_1_97),
+    .I3(charCode_6_109) 
+);
+defparam charCode_2_s85.INIT=16'h00E0;
+  LUT4 charCode_1_s79 (
+    .F(charCode_1_96),
+    .I0(charCode_4_114),
+    .I1(charCode_6_109),
+    .I2(charCode_6_105),
+    .I3(charCode_4_117) 
+);
+defparam charCode_1_s79.INIT=16'hD2ED;
+  LUT3 charCode_1_s80 (
+    .F(charCode_1_97),
+    .I0(n542_6),
+    .I1(charCode_6_110),
+    .I2(charCode_6_104) 
+);
+defparam charCode_1_s80.INIT=8'hB4;
+  LUT4 charCode_0_s90 (
+    .F(charCode_0_118),
+    .I0(charCode_4_117),
+    .I1(charCode_6_105),
+    .I2(charCode_5_102),
+    .I3(charCode_4_114) 
+);
+defparam charCode_0_s90.INIT=16'hF354;
+  LUT4 charCode_0_s91 (
+    .F(charCode_0_119),
+    .I0(charCode_6_105),
+    .I1(charCode_4_117),
+    .I2(charCode_4_126),
+    .I3(charCode_4_114) 
+);
+defparam charCode_0_s91.INIT=16'h518B;
+  LUT2 n542_s5 (
+    .F(n542_8),
+    .I0(xCoord_d[6]),
+    .I1(xCoord_d[5]) 
+);
+defparam n542_s5.INIT=4'h1;
+  LUT4 n542_s6 (
+    .F(n542_9),
+    .I0(xCoord_d[2]),
+    .I1(xCoord_d[1]),
+    .I2(xCoord_d[4]),
+    .I3(xCoord_d[3]) 
+);
+defparam n542_s6.INIT=16'h0007;
+  LUT4 n542_s7 (
+    .F(n542_10),
+    .I0(xCoord_d[10]),
+    .I1(xCoord_d[8]),
+    .I2(xCoord_d[7]),
+    .I3(xCoord_d[9]) 
+);
+defparam n542_s7.INIT=16'h0001;
+  LUT4 n542_s8 (
+    .F(n542_11),
+    .I0(fontAddress_3_10),
+    .I1(yCoord_d[3]),
+    .I2(yCoord_d[5]),
+    .I3(yCoord_d[4]) 
+);
+defparam n542_s8.INIT=16'hFB4F;
+  LUT2 charCode_5_s86 (
+    .F(charCode_5_104),
+    .I0(xCoord_d[1]),
+    .I1(xCoord_d[2]) 
+);
+defparam charCode_5_s86.INIT=4'h8;
+  LUT4 charCode_6_s92 (
+    .F(charCode_6_113),
+    .I0(xCoord_d[7]),
+    .I1(n542_9),
+    .I2(xCoord_d[5]),
+    .I3(xCoord_d[6]) 
+);
+defparam charCode_6_s92.INIT=16'hA655;
+  LUT4 n324_s6 (
+    .F(n324_14),
+    .I0(yCoord_d[7]),
+    .I1(n325_12),
+    .I2(yCoord_d[5]),
+    .I3(yCoord_d[6]) 
+);
+defparam n324_s6.INIT=16'hA955;
+  LUT4 charCode_5_s87 (
+    .F(charCode_5_106),
+    .I0(charCode_6_106),
+    .I1(n542_6_7),
+    .I2(xCoord_d[11]),
+    .I3(charCode_4_124) 
+);
+defparam charCode_5_s87.INIT=16'h00A8;
+  LUT4 charCode_4_s97 (
+    .F(charCode_4_124),
+    .I0(xCoord_d[0]),
+    .I1(xCoord_d[3]),
+    .I2(xCoord_d[1]),
+    .I3(xCoord_d[2]) 
+);
+defparam charCode_4_s97.INIT=16'h7CCC;
+  LUT3 charCode_6_s93 (
+    .F(charCode_6_115),
+    .I0(xCoord_d[3]),
+    .I1(xCoord_d[1]),
+    .I2(xCoord_d[2]) 
+);
+defparam charCode_6_s93.INIT=8'h95;
+  LUT3 charCode_6_s94 (
+    .F(charCode_6_117),
+    .I0(xCoord_d[0]),
+    .I1(xCoord_d[1]),
+    .I2(xCoord_d[2]) 
+);
+defparam charCode_6_s94.INIT=8'h40;
+  LUT4 charCode_5_s88 (
+    .F(charCode_5_108),
+    .I0(xCoord_d[3]),
+    .I1(xCoord_d[1]),
+    .I2(xCoord_d[2]),
+    .I3(xCoord_d[4]) 
+);
+defparam charCode_5_s88.INIT=16'h15EA;
+  LUT4 n325_s5 (
+    .F(n325_12),
+    .I0(yCoord_d[1]),
+    .I1(yCoord_d[2]),
+    .I2(yCoord_d[3]),
+    .I3(yCoord_d[4]) 
+);
+defparam n325_s5.INIT=16'hE000;
+  LUT4 n327_s4 (
+    .F(n327_11),
+    .I0(yCoord_d[1]),
+    .I1(yCoord_d[2]),
+    .I2(yCoord_d[3]),
+    .I3(yCoord_d[4]) 
+);
+defparam n327_s4.INIT=16'h1FE0;
+  LUT3 fontAddress_3_s5 (
+    .F(fontAddress[3]),
+    .I0(yCoord_d[3]),
+    .I1(yCoord_d[1]),
+    .I2(yCoord_d[2]) 
+);
+defparam fontAddress_3_s5.INIT=8'h56;
+  LUT3 charCode_3_s89 (
+    .F(charCode_3_113),
+    .I0(charCode_6_105),
+    .I1(xCoord_d[5]),
+    .I2(n542_9) 
+);
+defparam charCode_3_s89.INIT=8'h82;
+  LUT4 charCode_4_s98 (
+    .F(charCode_4_126),
+    .I0(xCoord_d[5]),
+    .I1(n542_9),
+    .I2(charCode_4_119),
+    .I3(charCode_5_108) 
+);
+defparam charCode_4_s98.INIT=16'h9996;
+  DFFR pixel_s0 (
+    .Q(d4),
+    .D(n541_29),
+    .CLK(clk_d),
+    .RESET(n542_4) 
+);
+defparam pixel_s0.INIT=1'b0;
+  ALU fontAddress_4_s (
+    .SUM(fontAddress[4]),
+    .COUT(fontAddress_4_3),
+    .I0(charCode_0[0]),
+    .I1(n327_11),
+    .I3(GND),
+    .CIN(GND) 
+);
+defparam fontAddress_4_s.ALU_MODE=0;
+  ALU fontAddress_5_s (
+    .SUM(fontAddress[5]),
+    .COUT(fontAddress_5_3),
+    .I0(charCode_0[1]),
+    .I1(n326_11),
+    .I3(GND),
+    .CIN(fontAddress_4_3) 
+);
+defparam fontAddress_5_s.ALU_MODE=0;
+  ALU fontAddress_6_s (
+    .SUM(fontAddress[6]),
+    .COUT(fontAddress_6_3),
+    .I0(charCode_0[2]),
+    .I1(n325_9),
+    .I3(GND),
+    .CIN(fontAddress_5_3) 
+);
+defparam fontAddress_6_s.ALU_MODE=0;
+  ALU fontAddress_7_s (
+    .SUM(fontAddress[7]),
+    .COUT(fontAddress_7_3),
+    .I0(charCode_0[3]),
+    .I1(n324_14),
+    .I3(GND),
+    .CIN(fontAddress_6_3) 
+);
+defparam fontAddress_7_s.ALU_MODE=0;
+  ALU fontAddress_8_s (
+    .SUM(fontAddress[8]),
+    .COUT(fontAddress_8_3),
+    .I0(charCode_0[4]),
+    .I1(n323_11),
+    .I3(GND),
+    .CIN(fontAddress_7_3) 
+);
+defparam fontAddress_8_s.ALU_MODE=0;
+  ALU fontAddress_9_s (
+    .SUM(fontAddress[9]),
+    .COUT(fontAddress_9_3),
+    .I0(charCode_0[5]),
+    .I1(n322_11),
+    .I3(GND),
+    .CIN(fontAddress_8_3) 
+);
+defparam fontAddress_9_s.ALU_MODE=0;
+  ALU fontAddress_10_s (
+    .SUM(fontAddress[10]),
+    .COUT(fontAddress_10_0_COUT),
+    .I0(charCode_0[6]),
+    .I1(n321_9),
+    .I3(GND),
+    .CIN(fontAddress_9_3) 
+);
+defparam fontAddress_10_s.ALU_MODE=0;
+  MUX2_LUT5 n541_s22 (
+    .O(n541_25),
+    .I0(n541_20),
+    .I1(n541_21),
+    .S0(n540_13) 
+);
+  MUX2_LUT5 n541_s23 (
+    .O(n541_27),
+    .I0(n541_22),
+    .I1(n541_23),
+    .S0(n540_13) 
+);
+  MUX2_LUT6 n541_s21 (
+    .O(n541_29),
+    .I0(n541_25),
+    .I1(n541_27),
+    .S0(n537_10) 
+);
+  VCC VCC_cZ (
+    .V(VCC)
+);
+  GND GND_cZ (
+    .G(GND)
+);
+endmodule /* Pixel_On_Text_2 */
+module Font_Rom (
+  clk_d,
+  yCoord_d,
+  fontAddress,
+  fontAddress_11,
+  fontAddress_12,
+  fontAddress_13,
+  fontAddress_14,
+  charBitInRow,
+  charBitInRow_15,
+  charBitInRow_16,
+  charBitInRow_17,
+  charBitInRow_18
+)
+;
+input clk_d;
+input [0:0] yCoord_d;
+input [10:1] fontAddress;
+input [10:3] fontAddress_11;
+input [10:4] fontAddress_12;
+input [10:4] fontAddress_13;
+input [10:4] fontAddress_14;
+output [7:0] charBitInRow;
+output [7:0] charBitInRow_15;
+output [7:0] charBitInRow_16;
+output [7:0] charBitInRow_17;
+output [7:0] charBitInRow_18;
+wire [31:8] DO;
+wire [31:8] DO_0;
+wire [31:8] DO_1;
+wire [31:8] DO_2;
+wire [31:8] DO_3;
+wire VCC;
+wire GND;
+  pROM ROM_ROM_0_0_s (
+    .DO({DO[31:8],charBitInRow[7:0]}),
+    .AD({fontAddress_11[10:3],fontAddress[2:1],yCoord_d[0],GND,GND,GND}),
+    .CLK(clk_d),
+    .CE(VCC),
+    .OCE(GND),
+    .RESET(GND) 
+);
+defparam ROM_ROM_0_0_s.BIT_WIDTH=8;
+defparam ROM_ROM_0_0_s.INIT_RAM_00=256'h000000007E818199BD8181A5817E000000000000000000000000000000000000;
+defparam ROM_ROM_0_0_s.INIT_RAM_01=256'h0000000010387CFEFEFEFE6C00000000000000007EFFFFE7C3FFFFDBFF7E0000;
+defparam ROM_ROM_0_0_s.INIT_RAM_02=256'h000000003C1818E7E7E73C3C18000000000000000010387CFE7C381000000000;
+defparam ROM_ROM_0_0_s.INIT_RAM_03=256'h000000000000183C3C18000000000000000000003C18187EFFFF7E3C18000000;
+defparam ROM_ROM_0_0_s.INIT_RAM_04=256'h00000000003C664242663C0000000000FFFFFFFFFFFFE7C3C3E7FFFFFFFFFFFF;
+defparam ROM_ROM_0_0_s.INIT_RAM_05=256'h0000000078CCCCCCCC78321A0E1E0000FFFFFFFFFFC399BDBD99C3FFFFFFFFFF;
+defparam ROM_ROM_0_0_s.INIT_RAM_06=256'h00000000E0F070303030303F333F00000000000018187E183C666666663C0000;
+defparam ROM_ROM_0_0_s.INIT_RAM_07=256'h000000001818DB3CE73CDB1818000000000000C0E6E767636363637F637F0000;
+defparam ROM_ROM_0_0_s.INIT_RAM_08=256'h0000000002060E1E3EFE3E1E0E0602000000000080C0E0F0F8FEF8F0E0C08000;
+defparam ROM_ROM_0_0_s.INIT_RAM_09=256'h000000006666006666666666666600000000000000183C7E1818187E3C180000;
+defparam ROM_ROM_0_0_s.INIT_RAM_0A=256'h0000007CC60C386CC6C66C3860C67C00000000001B1B1B1B1B7BDBDBDB7F0000;
+defparam ROM_ROM_0_0_s.INIT_RAM_0B=256'h000000307E183C7E1818187E3C18000000000000FEFEFEFE0000000000000000;
+defparam ROM_ROM_0_0_s.INIT_RAM_0C=256'h00000000183C7E18181818181818000000000000181818181818187E3C180000;
+defparam ROM_ROM_0_0_s.INIT_RAM_0D=256'h0000000000003060FE60300000000000000000000000180CFE0C180000000000;
+defparam ROM_ROM_0_0_s.INIT_RAM_0E=256'h0000000000002466FF66240000000000000000000000FEC0C0C0000000000000;
+defparam ROM_ROM_0_0_s.INIT_RAM_0F=256'h00000000001038387C7CFEFE000000000000000000FEFE7C7C38381000000000;
+defparam ROM_ROM_0_0_s.INIT_RAM_10=256'h000000001818001818183C3C3C18000000000000000000000000000000000000;
+defparam ROM_ROM_0_0_s.INIT_RAM_11=256'h000000006C6CFE6C6C6CFE6C6C00000000000000000000000000002466666600;
+defparam ROM_ROM_0_0_s.INIT_RAM_12=256'h0000000086C66030180CC6C200000000000018187CC68606067CC0C2C67C1818;
+defparam ROM_ROM_0_0_s.INIT_RAM_13=256'h000000000000000000000060303030000000000076CCCCCCDC76386C6C380000;
+defparam ROM_ROM_0_0_s.INIT_RAM_14=256'h0000000030180C0C0C0C0C0C18300000000000000C18303030303030180C0000;
+defparam ROM_ROM_0_0_s.INIT_RAM_15=256'h00000000000018187E18180000000000000000000000663CFF3C660000000000;
+defparam ROM_ROM_0_0_s.INIT_RAM_16=256'h00000000000000007E0000000000000000000030181818000000000000000000;
+defparam ROM_ROM_0_0_s.INIT_RAM_17=256'h0000000080C06030180C06020000000000000000181800000000000000000000;
+defparam ROM_ROM_0_0_s.INIT_RAM_18=256'h000000007E1818181818187838180000000000007CC6C6E6F6DECEC6C67C0000;
+defparam ROM_ROM_0_0_s.INIT_RAM_19=256'h000000007CC60606063C0606C67C000000000000FEC6C06030180C06C67C0000;
+defparam ROM_ROM_0_0_s.INIT_RAM_1A=256'h000000007CC6060606FCC0C0C0FE0000000000001E0C0C0CFECC6C3C1C0C0000;
+defparam ROM_ROM_0_0_s.INIT_RAM_1B=256'h0000000030303030180C0606C6FE0000000000007CC6C6C6C6FCC0C060380000;
+defparam ROM_ROM_0_0_s.INIT_RAM_1C=256'h00000000780C0606067EC6C6C67C0000000000007CC6C6C6C67CC6C6C67C0000;
+defparam ROM_ROM_0_0_s.INIT_RAM_1D=256'h0000000030181800000018180000000000000000001818000000181800000000;
+defparam ROM_ROM_0_0_s.INIT_RAM_1E=256'h000000000000007E00007E000000000000000000060C18306030180C06000000;
+defparam ROM_ROM_0_0_s.INIT_RAM_1F=256'h000000001818001818180CC6C67C0000000000006030180C060C183060000000;
+defparam ROM_ROM_0_0_s.INIT_RAM_20=256'h00000000C6C6C6C6FEC6C66C38100000000000007CC0DCDEDEDEC6C6C67C0000;
+defparam ROM_ROM_0_0_s.INIT_RAM_21=256'h000000003C66C2C0C0C0C0C2663C000000000000FC666666667C666666FC0000;
+defparam ROM_ROM_0_0_s.INIT_RAM_22=256'h00000000FE6662606878686266FE000000000000F86C6666666666666CF80000;
+defparam ROM_ROM_0_0_s.INIT_RAM_23=256'h000000003A66C6C6DEC0C0C2663C000000000000F06060606878686266FE0000;
+defparam ROM_ROM_0_0_s.INIT_RAM_24=256'h000000003C18181818181818183C000000000000C6C6C6C6C6FEC6C6C6C60000;
+defparam ROM_ROM_0_0_s.INIT_RAM_25=256'h00000000E666666C78786C6666E600000000000078CCCCCC0C0C0C0C0C1E0000;
+defparam ROM_ROM_0_0_s.INIT_RAM_26=256'h00000000C3C3C3C3C3DBFFFFE7C3000000000000FE6662606060606060F00000;
+defparam ROM_ROM_0_0_s.INIT_RAM_27=256'h000000007CC6C6C6C6C6C6C6C67C000000000000C6C6C6C6CEDEFEF6E6C60000;
+defparam ROM_ROM_0_0_s.INIT_RAM_28=256'h00000E0C7CDED6C6C6C6C6C6C67C000000000000F0606060607C666666FC0000;
+defparam ROM_ROM_0_0_s.INIT_RAM_29=256'h000000007CC6C6060C3860C6C67C000000000000E66666666C7C666666FC0000;
+defparam ROM_ROM_0_0_s.INIT_RAM_2A=256'h000000007CC6C6C6C6C6C6C6C6C60000000000003C18181818181899DBFF0000;
+defparam ROM_ROM_0_0_s.INIT_RAM_2B=256'h000000006666FFDBDBC3C3C3C3C3000000000000183C66C3C3C3C3C3C3C30000;
+defparam ROM_ROM_0_0_s.INIT_RAM_2C=256'h000000003C181818183C66C3C3C3000000000000C3C3663C18183C66C3C30000;
+defparam ROM_ROM_0_0_s.INIT_RAM_2D=256'h000000003C30303030303030303C000000000000FFC3C16030180C86C3FF0000;
+defparam ROM_ROM_0_0_s.INIT_RAM_2E=256'h000000003C0C0C0C0C0C0C0C0C3C00000000000002060E1C3870E0C080000000;
+defparam ROM_ROM_0_0_s.INIT_RAM_2F=256'h0000FF00000000000000000000000000000000000000000000000000C66C3810;
+defparam ROM_ROM_0_0_s.INIT_RAM_30=256'h0000000076CCCCCC7C0C78000000000000000000000000000000000000183030;
+defparam ROM_ROM_0_0_s.INIT_RAM_31=256'h000000007CC6C0C0C0C67C0000000000000000007C666666666C786060E00000;
+defparam ROM_ROM_0_0_s.INIT_RAM_32=256'h000000007CC6C0C0FEC67C00000000000000000076CCCCCCCC6C3C0C0C1C0000;
+defparam ROM_ROM_0_0_s.INIT_RAM_33=256'h0078CC0C7CCCCCCCCCCC76000000000000000000F060606060F060646C380000;
+defparam ROM_ROM_0_0_s.INIT_RAM_34=256'h000000003C181818181838001818000000000000E666666666766C6060E00000;
+defparam ROM_ROM_0_0_s.INIT_RAM_35=256'h00000000E6666C78786C666060E00000003C66660606060606060E0006060000;
+defparam ROM_ROM_0_0_s.INIT_RAM_36=256'h00000000DBDBDBDBDBFFE60000000000000000003C1818181818181818380000;
+defparam ROM_ROM_0_0_s.INIT_RAM_37=256'h000000007CC6C6C6C6C67C000000000000000000666666666666DC0000000000;
+defparam ROM_ROM_0_0_s.INIT_RAM_38=256'h001E0C0C7CCCCCCCCCCC76000000000000F060607C6666666666DC0000000000;
+defparam ROM_ROM_0_0_s.INIT_RAM_39=256'h000000007CC60C3860C67C000000000000000000F06060606676DC0000000000;
+defparam ROM_ROM_0_0_s.INIT_RAM_3A=256'h0000000076CCCCCCCCCCCC0000000000000000001C3630303030FC3030100000;
+defparam ROM_ROM_0_0_s.INIT_RAM_3B=256'h0000000066FFDBDBC3C3C3000000000000000000183C66C3C3C3C30000000000;
+defparam ROM_ROM_0_0_s.INIT_RAM_3C=256'h00F80C067EC6C6C6C6C6C6000000000000000000C3663C183C66C30000000000;
+defparam ROM_ROM_0_0_s.INIT_RAM_3D=256'h000000000E18181818701818180E000000000000FEC6603018CCFE0000000000;
+defparam ROM_ROM_0_0_s.INIT_RAM_3E=256'h0000000070181818180E18181870000000000000181818181800181818180000;
+defparam ROM_ROM_0_0_s.INIT_RAM_3F=256'h0000000000FEC6C6C66C381000000000000000000000000000000000DC760000;
+defparam ROM_ROM_0_0_s.READ_MODE=1'b0;
+defparam ROM_ROM_0_0_s.RESET_MODE="SYNC";
+  pROM ROM_ROM_0_0_s0 (
+    .DO({DO_0[31:8],charBitInRow_15[7:0]}),
+    .AD({fontAddress_12[10:4],fontAddress[3:1],yCoord_d[0],GND,GND,GND}),
+    .CLK(clk_d),
+    .CE(VCC),
+    .OCE(GND),
+    .RESET(GND) 
+);
+defparam ROM_ROM_0_0_s0.BIT_WIDTH=8;
+defparam ROM_ROM_0_0_s0.INIT_RAM_00=256'h000000007E818199BD8181A5817E000000000000000000000000000000000000;
+defparam ROM_ROM_0_0_s0.INIT_RAM_01=256'h0000000010387CFEFEFEFE6C00000000000000007EFFFFE7C3FFFFDBFF7E0000;
+defparam ROM_ROM_0_0_s0.INIT_RAM_02=256'h000000003C1818E7E7E73C3C18000000000000000010387CFE7C381000000000;
+defparam ROM_ROM_0_0_s0.INIT_RAM_03=256'h000000000000183C3C18000000000000000000003C18187EFFFF7E3C18000000;
+defparam ROM_ROM_0_0_s0.INIT_RAM_04=256'h00000000003C664242663C0000000000FFFFFFFFFFFFE7C3C3E7FFFFFFFFFFFF;
+defparam ROM_ROM_0_0_s0.INIT_RAM_05=256'h0000000078CCCCCCCC78321A0E1E0000FFFFFFFFFFC399BDBD99C3FFFFFFFFFF;
+defparam ROM_ROM_0_0_s0.INIT_RAM_06=256'h00000000E0F070303030303F333F00000000000018187E183C666666663C0000;
+defparam ROM_ROM_0_0_s0.INIT_RAM_07=256'h000000001818DB3CE73CDB1818000000000000C0E6E767636363637F637F0000;
+defparam ROM_ROM_0_0_s0.INIT_RAM_08=256'h0000000002060E1E3EFE3E1E0E0602000000000080C0E0F0F8FEF8F0E0C08000;
+defparam ROM_ROM_0_0_s0.INIT_RAM_09=256'h000000006666006666666666666600000000000000183C7E1818187E3C180000;
+defparam ROM_ROM_0_0_s0.INIT_RAM_0A=256'h0000007CC60C386CC6C66C3860C67C00000000001B1B1B1B1B7BDBDBDB7F0000;
+defparam ROM_ROM_0_0_s0.INIT_RAM_0B=256'h000000307E183C7E1818187E3C18000000000000FEFEFEFE0000000000000000;
+defparam ROM_ROM_0_0_s0.INIT_RAM_0C=256'h00000000183C7E18181818181818000000000000181818181818187E3C180000;
+defparam ROM_ROM_0_0_s0.INIT_RAM_0D=256'h0000000000003060FE60300000000000000000000000180CFE0C180000000000;
+defparam ROM_ROM_0_0_s0.INIT_RAM_0E=256'h0000000000002466FF66240000000000000000000000FEC0C0C0000000000000;
+defparam ROM_ROM_0_0_s0.INIT_RAM_0F=256'h00000000001038387C7CFEFE000000000000000000FEFE7C7C38381000000000;
+defparam ROM_ROM_0_0_s0.INIT_RAM_10=256'h000000001818001818183C3C3C18000000000000000000000000000000000000;
+defparam ROM_ROM_0_0_s0.INIT_RAM_11=256'h000000006C6CFE6C6C6CFE6C6C00000000000000000000000000002466666600;
+defparam ROM_ROM_0_0_s0.INIT_RAM_12=256'h0000000086C66030180CC6C200000000000018187CC68606067CC0C2C67C1818;
+defparam ROM_ROM_0_0_s0.INIT_RAM_13=256'h000000000000000000000060303030000000000076CCCCCCDC76386C6C380000;
+defparam ROM_ROM_0_0_s0.INIT_RAM_14=256'h0000000030180C0C0C0C0C0C18300000000000000C18303030303030180C0000;
+defparam ROM_ROM_0_0_s0.INIT_RAM_15=256'h00000000000018187E18180000000000000000000000663CFF3C660000000000;
+defparam ROM_ROM_0_0_s0.INIT_RAM_16=256'h00000000000000007E0000000000000000000030181818000000000000000000;
+defparam ROM_ROM_0_0_s0.INIT_RAM_17=256'h0000000080C06030180C06020000000000000000181800000000000000000000;
+defparam ROM_ROM_0_0_s0.INIT_RAM_18=256'h000000007E1818181818187838180000000000007CC6C6E6F6DECEC6C67C0000;
+defparam ROM_ROM_0_0_s0.INIT_RAM_19=256'h000000007CC60606063C0606C67C000000000000FEC6C06030180C06C67C0000;
+defparam ROM_ROM_0_0_s0.INIT_RAM_1A=256'h000000007CC6060606FCC0C0C0FE0000000000001E0C0C0CFECC6C3C1C0C0000;
+defparam ROM_ROM_0_0_s0.INIT_RAM_1B=256'h0000000030303030180C0606C6FE0000000000007CC6C6C6C6FCC0C060380000;
+defparam ROM_ROM_0_0_s0.INIT_RAM_1C=256'h00000000780C0606067EC6C6C67C0000000000007CC6C6C6C67CC6C6C67C0000;
+defparam ROM_ROM_0_0_s0.INIT_RAM_1D=256'h0000000030181800000018180000000000000000001818000000181800000000;
+defparam ROM_ROM_0_0_s0.INIT_RAM_1E=256'h000000000000007E00007E000000000000000000060C18306030180C06000000;
+defparam ROM_ROM_0_0_s0.INIT_RAM_1F=256'h000000001818001818180CC6C67C0000000000006030180C060C183060000000;
+defparam ROM_ROM_0_0_s0.INIT_RAM_20=256'h00000000C6C6C6C6FEC6C66C38100000000000007CC0DCDEDEDEC6C6C67C0000;
+defparam ROM_ROM_0_0_s0.INIT_RAM_21=256'h000000003C66C2C0C0C0C0C2663C000000000000FC666666667C666666FC0000;
+defparam ROM_ROM_0_0_s0.INIT_RAM_22=256'h00000000FE6662606878686266FE000000000000F86C6666666666666CF80000;
+defparam ROM_ROM_0_0_s0.INIT_RAM_23=256'h000000003A66C6C6DEC0C0C2663C000000000000F06060606878686266FE0000;
+defparam ROM_ROM_0_0_s0.INIT_RAM_24=256'h000000003C18181818181818183C000000000000C6C6C6C6C6FEC6C6C6C60000;
+defparam ROM_ROM_0_0_s0.INIT_RAM_25=256'h00000000E666666C78786C6666E600000000000078CCCCCC0C0C0C0C0C1E0000;
+defparam ROM_ROM_0_0_s0.INIT_RAM_26=256'h00000000C3C3C3C3C3DBFFFFE7C3000000000000FE6662606060606060F00000;
+defparam ROM_ROM_0_0_s0.INIT_RAM_27=256'h000000007CC6C6C6C6C6C6C6C67C000000000000C6C6C6C6CEDEFEF6E6C60000;
+defparam ROM_ROM_0_0_s0.INIT_RAM_28=256'h00000E0C7CDED6C6C6C6C6C6C67C000000000000F0606060607C666666FC0000;
+defparam ROM_ROM_0_0_s0.INIT_RAM_29=256'h000000007CC6C6060C3860C6C67C000000000000E66666666C7C666666FC0000;
+defparam ROM_ROM_0_0_s0.INIT_RAM_2A=256'h000000007CC6C6C6C6C6C6C6C6C60000000000003C18181818181899DBFF0000;
+defparam ROM_ROM_0_0_s0.INIT_RAM_2B=256'h000000006666FFDBDBC3C3C3C3C3000000000000183C66C3C3C3C3C3C3C30000;
+defparam ROM_ROM_0_0_s0.INIT_RAM_2C=256'h000000003C181818183C66C3C3C3000000000000C3C3663C18183C66C3C30000;
+defparam ROM_ROM_0_0_s0.INIT_RAM_2D=256'h000000003C30303030303030303C000000000000FFC3C16030180C86C3FF0000;
+defparam ROM_ROM_0_0_s0.INIT_RAM_2E=256'h000000003C0C0C0C0C0C0C0C0C3C00000000000002060E1C3870E0C080000000;
+defparam ROM_ROM_0_0_s0.INIT_RAM_2F=256'h0000FF00000000000000000000000000000000000000000000000000C66C3810;
+defparam ROM_ROM_0_0_s0.INIT_RAM_30=256'h0000000076CCCCCC7C0C78000000000000000000000000000000000000183030;
+defparam ROM_ROM_0_0_s0.INIT_RAM_31=256'h000000007CC6C0C0C0C67C0000000000000000007C666666666C786060E00000;
+defparam ROM_ROM_0_0_s0.INIT_RAM_32=256'h000000007CC6C0C0FEC67C00000000000000000076CCCCCCCC6C3C0C0C1C0000;
+defparam ROM_ROM_0_0_s0.INIT_RAM_33=256'h0078CC0C7CCCCCCCCCCC76000000000000000000F060606060F060646C380000;
+defparam ROM_ROM_0_0_s0.INIT_RAM_34=256'h000000003C181818181838001818000000000000E666666666766C6060E00000;
+defparam ROM_ROM_0_0_s0.INIT_RAM_35=256'h00000000E6666C78786C666060E00000003C66660606060606060E0006060000;
+defparam ROM_ROM_0_0_s0.INIT_RAM_36=256'h00000000DBDBDBDBDBFFE60000000000000000003C1818181818181818380000;
+defparam ROM_ROM_0_0_s0.INIT_RAM_37=256'h000000007CC6C6C6C6C67C000000000000000000666666666666DC0000000000;
+defparam ROM_ROM_0_0_s0.INIT_RAM_38=256'h001E0C0C7CCCCCCCCCCC76000000000000F060607C6666666666DC0000000000;
+defparam ROM_ROM_0_0_s0.INIT_RAM_39=256'h000000007CC60C3860C67C000000000000000000F06060606676DC0000000000;
+defparam ROM_ROM_0_0_s0.INIT_RAM_3A=256'h0000000076CCCCCCCCCCCC0000000000000000001C3630303030FC3030100000;
+defparam ROM_ROM_0_0_s0.INIT_RAM_3B=256'h0000000066FFDBDBC3C3C3000000000000000000183C66C3C3C3C30000000000;
+defparam ROM_ROM_0_0_s0.INIT_RAM_3C=256'h00F80C067EC6C6C6C6C6C6000000000000000000C3663C183C66C30000000000;
+defparam ROM_ROM_0_0_s0.INIT_RAM_3D=256'h000000000E18181818701818180E000000000000FEC6603018CCFE0000000000;
+defparam ROM_ROM_0_0_s0.INIT_RAM_3E=256'h0000000070181818180E18181870000000000000181818181800181818180000;
+defparam ROM_ROM_0_0_s0.INIT_RAM_3F=256'h0000000000FEC6C6C66C381000000000000000000000000000000000DC760000;
+defparam ROM_ROM_0_0_s0.READ_MODE=1'b0;
+defparam ROM_ROM_0_0_s0.RESET_MODE="SYNC";
+  pROM ROM_ROM_0_0_s1 (
+    .DO({DO_1[31:8],charBitInRow_16[7:0]}),
+    .AD({fontAddress[10:1],yCoord_d[0],GND,GND,GND}),
+    .CLK(clk_d),
+    .CE(VCC),
+    .OCE(GND),
+    .RESET(GND) 
+);
+defparam ROM_ROM_0_0_s1.BIT_WIDTH=8;
+defparam ROM_ROM_0_0_s1.INIT_RAM_00=256'h000000007E818199BD8181A5817E000000000000000000000000000000000000;
+defparam ROM_ROM_0_0_s1.INIT_RAM_01=256'h0000000010387CFEFEFEFE6C00000000000000007EFFFFE7C3FFFFDBFF7E0000;
+defparam ROM_ROM_0_0_s1.INIT_RAM_02=256'h000000003C1818E7E7E73C3C18000000000000000010387CFE7C381000000000;
+defparam ROM_ROM_0_0_s1.INIT_RAM_03=256'h000000000000183C3C18000000000000000000003C18187EFFFF7E3C18000000;
+defparam ROM_ROM_0_0_s1.INIT_RAM_04=256'h00000000003C664242663C0000000000FFFFFFFFFFFFE7C3C3E7FFFFFFFFFFFF;
+defparam ROM_ROM_0_0_s1.INIT_RAM_05=256'h0000000078CCCCCCCC78321A0E1E0000FFFFFFFFFFC399BDBD99C3FFFFFFFFFF;
+defparam ROM_ROM_0_0_s1.INIT_RAM_06=256'h00000000E0F070303030303F333F00000000000018187E183C666666663C0000;
+defparam ROM_ROM_0_0_s1.INIT_RAM_07=256'h000000001818DB3CE73CDB1818000000000000C0E6E767636363637F637F0000;
+defparam ROM_ROM_0_0_s1.INIT_RAM_08=256'h0000000002060E1E3EFE3E1E0E0602000000000080C0E0F0F8FEF8F0E0C08000;
+defparam ROM_ROM_0_0_s1.INIT_RAM_09=256'h000000006666006666666666666600000000000000183C7E1818187E3C180000;
+defparam ROM_ROM_0_0_s1.INIT_RAM_0A=256'h0000007CC60C386CC6C66C3860C67C00000000001B1B1B1B1B7BDBDBDB7F0000;
+defparam ROM_ROM_0_0_s1.INIT_RAM_0B=256'h000000307E183C7E1818187E3C18000000000000FEFEFEFE0000000000000000;
+defparam ROM_ROM_0_0_s1.INIT_RAM_0C=256'h00000000183C7E18181818181818000000000000181818181818187E3C180000;
+defparam ROM_ROM_0_0_s1.INIT_RAM_0D=256'h0000000000003060FE60300000000000000000000000180CFE0C180000000000;
+defparam ROM_ROM_0_0_s1.INIT_RAM_0E=256'h0000000000002466FF66240000000000000000000000FEC0C0C0000000000000;
+defparam ROM_ROM_0_0_s1.INIT_RAM_0F=256'h00000000001038387C7CFEFE000000000000000000FEFE7C7C38381000000000;
+defparam ROM_ROM_0_0_s1.INIT_RAM_10=256'h000000001818001818183C3C3C18000000000000000000000000000000000000;
+defparam ROM_ROM_0_0_s1.INIT_RAM_11=256'h000000006C6CFE6C6C6CFE6C6C00000000000000000000000000002466666600;
+defparam ROM_ROM_0_0_s1.INIT_RAM_12=256'h0000000086C66030180CC6C200000000000018187CC68606067CC0C2C67C1818;
+defparam ROM_ROM_0_0_s1.INIT_RAM_13=256'h000000000000000000000060303030000000000076CCCCCCDC76386C6C380000;
+defparam ROM_ROM_0_0_s1.INIT_RAM_14=256'h0000000030180C0C0C0C0C0C18300000000000000C18303030303030180C0000;
+defparam ROM_ROM_0_0_s1.INIT_RAM_15=256'h00000000000018187E18180000000000000000000000663CFF3C660000000000;
+defparam ROM_ROM_0_0_s1.INIT_RAM_16=256'h00000000000000007E0000000000000000000030181818000000000000000000;
+defparam ROM_ROM_0_0_s1.INIT_RAM_17=256'h0000000080C06030180C06020000000000000000181800000000000000000000;
+defparam ROM_ROM_0_0_s1.INIT_RAM_18=256'h000000007E1818181818187838180000000000007CC6C6E6F6DECEC6C67C0000;
+defparam ROM_ROM_0_0_s1.INIT_RAM_19=256'h000000007CC60606063C0606C67C000000000000FEC6C06030180C06C67C0000;
+defparam ROM_ROM_0_0_s1.INIT_RAM_1A=256'h000000007CC6060606FCC0C0C0FE0000000000001E0C0C0CFECC6C3C1C0C0000;
+defparam ROM_ROM_0_0_s1.INIT_RAM_1B=256'h0000000030303030180C0606C6FE0000000000007CC6C6C6C6FCC0C060380000;
+defparam ROM_ROM_0_0_s1.INIT_RAM_1C=256'h00000000780C0606067EC6C6C67C0000000000007CC6C6C6C67CC6C6C67C0000;
+defparam ROM_ROM_0_0_s1.INIT_RAM_1D=256'h0000000030181800000018180000000000000000001818000000181800000000;
+defparam ROM_ROM_0_0_s1.INIT_RAM_1E=256'h000000000000007E00007E000000000000000000060C18306030180C06000000;
+defparam ROM_ROM_0_0_s1.INIT_RAM_1F=256'h000000001818001818180CC6C67C0000000000006030180C060C183060000000;
+defparam ROM_ROM_0_0_s1.INIT_RAM_20=256'h00000000C6C6C6C6FEC6C66C38100000000000007CC0DCDEDEDEC6C6C67C0000;
+defparam ROM_ROM_0_0_s1.INIT_RAM_21=256'h000000003C66C2C0C0C0C0C2663C000000000000FC666666667C666666FC0000;
+defparam ROM_ROM_0_0_s1.INIT_RAM_22=256'h00000000FE6662606878686266FE000000000000F86C6666666666666CF80000;
+defparam ROM_ROM_0_0_s1.INIT_RAM_23=256'h000000003A66C6C6DEC0C0C2663C000000000000F06060606878686266FE0000;
+defparam ROM_ROM_0_0_s1.INIT_RAM_24=256'h000000003C18181818181818183C000000000000C6C6C6C6C6FEC6C6C6C60000;
+defparam ROM_ROM_0_0_s1.INIT_RAM_25=256'h00000000E666666C78786C6666E600000000000078CCCCCC0C0C0C0C0C1E0000;
+defparam ROM_ROM_0_0_s1.INIT_RAM_26=256'h00000000C3C3C3C3C3DBFFFFE7C3000000000000FE6662606060606060F00000;
+defparam ROM_ROM_0_0_s1.INIT_RAM_27=256'h000000007CC6C6C6C6C6C6C6C67C000000000000C6C6C6C6CEDEFEF6E6C60000;
+defparam ROM_ROM_0_0_s1.INIT_RAM_28=256'h00000E0C7CDED6C6C6C6C6C6C67C000000000000F0606060607C666666FC0000;
+defparam ROM_ROM_0_0_s1.INIT_RAM_29=256'h000000007CC6C6060C3860C6C67C000000000000E66666666C7C666666FC0000;
+defparam ROM_ROM_0_0_s1.INIT_RAM_2A=256'h000000007CC6C6C6C6C6C6C6C6C60000000000003C18181818181899DBFF0000;
+defparam ROM_ROM_0_0_s1.INIT_RAM_2B=256'h000000006666FFDBDBC3C3C3C3C3000000000000183C66C3C3C3C3C3C3C30000;
+defparam ROM_ROM_0_0_s1.INIT_RAM_2C=256'h000000003C181818183C66C3C3C3000000000000C3C3663C18183C66C3C30000;
+defparam ROM_ROM_0_0_s1.INIT_RAM_2D=256'h000000003C30303030303030303C000000000000FFC3C16030180C86C3FF0000;
+defparam ROM_ROM_0_0_s1.INIT_RAM_2E=256'h000000003C0C0C0C0C0C0C0C0C3C00000000000002060E1C3870E0C080000000;
+defparam ROM_ROM_0_0_s1.INIT_RAM_2F=256'h0000FF00000000000000000000000000000000000000000000000000C66C3810;
+defparam ROM_ROM_0_0_s1.INIT_RAM_30=256'h0000000076CCCCCC7C0C78000000000000000000000000000000000000183030;
+defparam ROM_ROM_0_0_s1.INIT_RAM_31=256'h000000007CC6C0C0C0C67C0000000000000000007C666666666C786060E00000;
+defparam ROM_ROM_0_0_s1.INIT_RAM_32=256'h000000007CC6C0C0FEC67C00000000000000000076CCCCCCCC6C3C0C0C1C0000;
+defparam ROM_ROM_0_0_s1.INIT_RAM_33=256'h0078CC0C7CCCCCCCCCCC76000000000000000000F060606060F060646C380000;
+defparam ROM_ROM_0_0_s1.INIT_RAM_34=256'h000000003C181818181838001818000000000000E666666666766C6060E00000;
+defparam ROM_ROM_0_0_s1.INIT_RAM_35=256'h00000000E6666C78786C666060E00000003C66660606060606060E0006060000;
+defparam ROM_ROM_0_0_s1.INIT_RAM_36=256'h00000000DBDBDBDBDBFFE60000000000000000003C1818181818181818380000;
+defparam ROM_ROM_0_0_s1.INIT_RAM_37=256'h000000007CC6C6C6C6C67C000000000000000000666666666666DC0000000000;
+defparam ROM_ROM_0_0_s1.INIT_RAM_38=256'h001E0C0C7CCCCCCCCCCC76000000000000F060607C6666666666DC0000000000;
+defparam ROM_ROM_0_0_s1.INIT_RAM_39=256'h000000007CC60C3860C67C000000000000000000F06060606676DC0000000000;
+defparam ROM_ROM_0_0_s1.INIT_RAM_3A=256'h0000000076CCCCCCCCCCCC0000000000000000001C3630303030FC3030100000;
+defparam ROM_ROM_0_0_s1.INIT_RAM_3B=256'h0000000066FFDBDBC3C3C3000000000000000000183C66C3C3C3C30000000000;
+defparam ROM_ROM_0_0_s1.INIT_RAM_3C=256'h00F80C067EC6C6C6C6C6C6000000000000000000C3663C183C66C30000000000;
+defparam ROM_ROM_0_0_s1.INIT_RAM_3D=256'h000000000E18181818701818180E000000000000FEC6603018CCFE0000000000;
+defparam ROM_ROM_0_0_s1.INIT_RAM_3E=256'h0000000070181818180E18181870000000000000181818181800181818180000;
+defparam ROM_ROM_0_0_s1.INIT_RAM_3F=256'h0000000000FEC6C6C66C381000000000000000000000000000000000DC760000;
+defparam ROM_ROM_0_0_s1.READ_MODE=1'b0;
+defparam ROM_ROM_0_0_s1.RESET_MODE="SYNC";
+  pROM ROM_ROM_0_0_s2 (
+    .DO({DO_2[31:8],charBitInRow_17[7:0]}),
+    .AD({fontAddress_13[10:4],fontAddress[3:1],yCoord_d[0],GND,GND,GND}),
+    .CLK(clk_d),
+    .CE(VCC),
+    .OCE(GND),
+    .RESET(GND) 
+);
+defparam ROM_ROM_0_0_s2.BIT_WIDTH=8;
+defparam ROM_ROM_0_0_s2.INIT_RAM_00=256'h000000007E818199BD8181A5817E000000000000000000000000000000000000;
+defparam ROM_ROM_0_0_s2.INIT_RAM_01=256'h0000000010387CFEFEFEFE6C00000000000000007EFFFFE7C3FFFFDBFF7E0000;
+defparam ROM_ROM_0_0_s2.INIT_RAM_02=256'h000000003C1818E7E7E73C3C18000000000000000010387CFE7C381000000000;
+defparam ROM_ROM_0_0_s2.INIT_RAM_03=256'h000000000000183C3C18000000000000000000003C18187EFFFF7E3C18000000;
+defparam ROM_ROM_0_0_s2.INIT_RAM_04=256'h00000000003C664242663C0000000000FFFFFFFFFFFFE7C3C3E7FFFFFFFFFFFF;
+defparam ROM_ROM_0_0_s2.INIT_RAM_05=256'h0000000078CCCCCCCC78321A0E1E0000FFFFFFFFFFC399BDBD99C3FFFFFFFFFF;
+defparam ROM_ROM_0_0_s2.INIT_RAM_06=256'h00000000E0F070303030303F333F00000000000018187E183C666666663C0000;
+defparam ROM_ROM_0_0_s2.INIT_RAM_07=256'h000000001818DB3CE73CDB1818000000000000C0E6E767636363637F637F0000;
+defparam ROM_ROM_0_0_s2.INIT_RAM_08=256'h0000000002060E1E3EFE3E1E0E0602000000000080C0E0F0F8FEF8F0E0C08000;
+defparam ROM_ROM_0_0_s2.INIT_RAM_09=256'h000000006666006666666666666600000000000000183C7E1818187E3C180000;
+defparam ROM_ROM_0_0_s2.INIT_RAM_0A=256'h0000007CC60C386CC6C66C3860C67C00000000001B1B1B1B1B7BDBDBDB7F0000;
+defparam ROM_ROM_0_0_s2.INIT_RAM_0B=256'h000000307E183C7E1818187E3C18000000000000FEFEFEFE0000000000000000;
+defparam ROM_ROM_0_0_s2.INIT_RAM_0C=256'h00000000183C7E18181818181818000000000000181818181818187E3C180000;
+defparam ROM_ROM_0_0_s2.INIT_RAM_0D=256'h0000000000003060FE60300000000000000000000000180CFE0C180000000000;
+defparam ROM_ROM_0_0_s2.INIT_RAM_0E=256'h0000000000002466FF66240000000000000000000000FEC0C0C0000000000000;
+defparam ROM_ROM_0_0_s2.INIT_RAM_0F=256'h00000000001038387C7CFEFE000000000000000000FEFE7C7C38381000000000;
+defparam ROM_ROM_0_0_s2.INIT_RAM_10=256'h000000001818001818183C3C3C18000000000000000000000000000000000000;
+defparam ROM_ROM_0_0_s2.INIT_RAM_11=256'h000000006C6CFE6C6C6CFE6C6C00000000000000000000000000002466666600;
+defparam ROM_ROM_0_0_s2.INIT_RAM_12=256'h0000000086C66030180CC6C200000000000018187CC68606067CC0C2C67C1818;
+defparam ROM_ROM_0_0_s2.INIT_RAM_13=256'h000000000000000000000060303030000000000076CCCCCCDC76386C6C380000;
+defparam ROM_ROM_0_0_s2.INIT_RAM_14=256'h0000000030180C0C0C0C0C0C18300000000000000C18303030303030180C0000;
+defparam ROM_ROM_0_0_s2.INIT_RAM_15=256'h00000000000018187E18180000000000000000000000663CFF3C660000000000;
+defparam ROM_ROM_0_0_s2.INIT_RAM_16=256'h00000000000000007E0000000000000000000030181818000000000000000000;
+defparam ROM_ROM_0_0_s2.INIT_RAM_17=256'h0000000080C06030180C06020000000000000000181800000000000000000000;
+defparam ROM_ROM_0_0_s2.INIT_RAM_18=256'h000000007E1818181818187838180000000000007CC6C6E6F6DECEC6C67C0000;
+defparam ROM_ROM_0_0_s2.INIT_RAM_19=256'h000000007CC60606063C0606C67C000000000000FEC6C06030180C06C67C0000;
+defparam ROM_ROM_0_0_s2.INIT_RAM_1A=256'h000000007CC6060606FCC0C0C0FE0000000000001E0C0C0CFECC6C3C1C0C0000;
+defparam ROM_ROM_0_0_s2.INIT_RAM_1B=256'h0000000030303030180C0606C6FE0000000000007CC6C6C6C6FCC0C060380000;
+defparam ROM_ROM_0_0_s2.INIT_RAM_1C=256'h00000000780C0606067EC6C6C67C0000000000007CC6C6C6C67CC6C6C67C0000;
+defparam ROM_ROM_0_0_s2.INIT_RAM_1D=256'h0000000030181800000018180000000000000000001818000000181800000000;
+defparam ROM_ROM_0_0_s2.INIT_RAM_1E=256'h000000000000007E00007E000000000000000000060C18306030180C06000000;
+defparam ROM_ROM_0_0_s2.INIT_RAM_1F=256'h000000001818001818180CC6C67C0000000000006030180C060C183060000000;
+defparam ROM_ROM_0_0_s2.INIT_RAM_20=256'h00000000C6C6C6C6FEC6C66C38100000000000007CC0DCDEDEDEC6C6C67C0000;
+defparam ROM_ROM_0_0_s2.INIT_RAM_21=256'h000000003C66C2C0C0C0C0C2663C000000000000FC666666667C666666FC0000;
+defparam ROM_ROM_0_0_s2.INIT_RAM_22=256'h00000000FE6662606878686266FE000000000000F86C6666666666666CF80000;
+defparam ROM_ROM_0_0_s2.INIT_RAM_23=256'h000000003A66C6C6DEC0C0C2663C000000000000F06060606878686266FE0000;
+defparam ROM_ROM_0_0_s2.INIT_RAM_24=256'h000000003C18181818181818183C000000000000C6C6C6C6C6FEC6C6C6C60000;
+defparam ROM_ROM_0_0_s2.INIT_RAM_25=256'h00000000E666666C78786C6666E600000000000078CCCCCC0C0C0C0C0C1E0000;
+defparam ROM_ROM_0_0_s2.INIT_RAM_26=256'h00000000C3C3C3C3C3DBFFFFE7C3000000000000FE6662606060606060F00000;
+defparam ROM_ROM_0_0_s2.INIT_RAM_27=256'h000000007CC6C6C6C6C6C6C6C67C000000000000C6C6C6C6CEDEFEF6E6C60000;
+defparam ROM_ROM_0_0_s2.INIT_RAM_28=256'h00000E0C7CDED6C6C6C6C6C6C67C000000000000F0606060607C666666FC0000;
+defparam ROM_ROM_0_0_s2.INIT_RAM_29=256'h000000007CC6C6060C3860C6C67C000000000000E66666666C7C666666FC0000;
+defparam ROM_ROM_0_0_s2.INIT_RAM_2A=256'h000000007CC6C6C6C6C6C6C6C6C60000000000003C18181818181899DBFF0000;
+defparam ROM_ROM_0_0_s2.INIT_RAM_2B=256'h000000006666FFDBDBC3C3C3C3C3000000000000183C66C3C3C3C3C3C3C30000;
+defparam ROM_ROM_0_0_s2.INIT_RAM_2C=256'h000000003C181818183C66C3C3C3000000000000C3C3663C18183C66C3C30000;
+defparam ROM_ROM_0_0_s2.INIT_RAM_2D=256'h000000003C30303030303030303C000000000000FFC3C16030180C86C3FF0000;
+defparam ROM_ROM_0_0_s2.INIT_RAM_2E=256'h000000003C0C0C0C0C0C0C0C0C3C00000000000002060E1C3870E0C080000000;
+defparam ROM_ROM_0_0_s2.INIT_RAM_2F=256'h0000FF00000000000000000000000000000000000000000000000000C66C3810;
+defparam ROM_ROM_0_0_s2.INIT_RAM_30=256'h0000000076CCCCCC7C0C78000000000000000000000000000000000000183030;
+defparam ROM_ROM_0_0_s2.INIT_RAM_31=256'h000000007CC6C0C0C0C67C0000000000000000007C666666666C786060E00000;
+defparam ROM_ROM_0_0_s2.INIT_RAM_32=256'h000000007CC6C0C0FEC67C00000000000000000076CCCCCCCC6C3C0C0C1C0000;
+defparam ROM_ROM_0_0_s2.INIT_RAM_33=256'h0078CC0C7CCCCCCCCCCC76000000000000000000F060606060F060646C380000;
+defparam ROM_ROM_0_0_s2.INIT_RAM_34=256'h000000003C181818181838001818000000000000E666666666766C6060E00000;
+defparam ROM_ROM_0_0_s2.INIT_RAM_35=256'h00000000E6666C78786C666060E00000003C66660606060606060E0006060000;
+defparam ROM_ROM_0_0_s2.INIT_RAM_36=256'h00000000DBDBDBDBDBFFE60000000000000000003C1818181818181818380000;
+defparam ROM_ROM_0_0_s2.INIT_RAM_37=256'h000000007CC6C6C6C6C67C000000000000000000666666666666DC0000000000;
+defparam ROM_ROM_0_0_s2.INIT_RAM_38=256'h001E0C0C7CCCCCCCCCCC76000000000000F060607C6666666666DC0000000000;
+defparam ROM_ROM_0_0_s2.INIT_RAM_39=256'h000000007CC60C3860C67C000000000000000000F06060606676DC0000000000;
+defparam ROM_ROM_0_0_s2.INIT_RAM_3A=256'h0000000076CCCCCCCCCCCC0000000000000000001C3630303030FC3030100000;
+defparam ROM_ROM_0_0_s2.INIT_RAM_3B=256'h0000000066FFDBDBC3C3C3000000000000000000183C66C3C3C3C30000000000;
+defparam ROM_ROM_0_0_s2.INIT_RAM_3C=256'h00F80C067EC6C6C6C6C6C6000000000000000000C3663C183C66C30000000000;
+defparam ROM_ROM_0_0_s2.INIT_RAM_3D=256'h000000000E18181818701818180E000000000000FEC6603018CCFE0000000000;
+defparam ROM_ROM_0_0_s2.INIT_RAM_3E=256'h0000000070181818180E18181870000000000000181818181800181818180000;
+defparam ROM_ROM_0_0_s2.INIT_RAM_3F=256'h0000000000FEC6C6C66C381000000000000000000000000000000000DC760000;
+defparam ROM_ROM_0_0_s2.READ_MODE=1'b0;
+defparam ROM_ROM_0_0_s2.RESET_MODE="SYNC";
+  pROM ROM_ROM_0_0_s3 (
+    .DO({DO_3[31:8],charBitInRow_18[7:0]}),
+    .AD({fontAddress_14[10:4],fontAddress_11[3],fontAddress[2:1],yCoord_d[0],GND,GND,GND}),
+    .CLK(clk_d),
+    .CE(VCC),
+    .OCE(GND),
+    .RESET(GND) 
+);
+defparam ROM_ROM_0_0_s3.BIT_WIDTH=8;
+defparam ROM_ROM_0_0_s3.INIT_RAM_00=256'h000000007E818199BD8181A5817E000000000000000000000000000000000000;
+defparam ROM_ROM_0_0_s3.INIT_RAM_01=256'h0000000010387CFEFEFEFE6C00000000000000007EFFFFE7C3FFFFDBFF7E0000;
+defparam ROM_ROM_0_0_s3.INIT_RAM_02=256'h000000003C1818E7E7E73C3C18000000000000000010387CFE7C381000000000;
+defparam ROM_ROM_0_0_s3.INIT_RAM_03=256'h000000000000183C3C18000000000000000000003C18187EFFFF7E3C18000000;
+defparam ROM_ROM_0_0_s3.INIT_RAM_04=256'h00000000003C664242663C0000000000FFFFFFFFFFFFE7C3C3E7FFFFFFFFFFFF;
+defparam ROM_ROM_0_0_s3.INIT_RAM_05=256'h0000000078CCCCCCCC78321A0E1E0000FFFFFFFFFFC399BDBD99C3FFFFFFFFFF;
+defparam ROM_ROM_0_0_s3.INIT_RAM_06=256'h00000000E0F070303030303F333F00000000000018187E183C666666663C0000;
+defparam ROM_ROM_0_0_s3.INIT_RAM_07=256'h000000001818DB3CE73CDB1818000000000000C0E6E767636363637F637F0000;
+defparam ROM_ROM_0_0_s3.INIT_RAM_08=256'h0000000002060E1E3EFE3E1E0E0602000000000080C0E0F0F8FEF8F0E0C08000;
+defparam ROM_ROM_0_0_s3.INIT_RAM_09=256'h000000006666006666666666666600000000000000183C7E1818187E3C180000;
+defparam ROM_ROM_0_0_s3.INIT_RAM_0A=256'h0000007CC60C386CC6C66C3860C67C00000000001B1B1B1B1B7BDBDBDB7F0000;
+defparam ROM_ROM_0_0_s3.INIT_RAM_0B=256'h000000307E183C7E1818187E3C18000000000000FEFEFEFE0000000000000000;
+defparam ROM_ROM_0_0_s3.INIT_RAM_0C=256'h00000000183C7E18181818181818000000000000181818181818187E3C180000;
+defparam ROM_ROM_0_0_s3.INIT_RAM_0D=256'h0000000000003060FE60300000000000000000000000180CFE0C180000000000;
+defparam ROM_ROM_0_0_s3.INIT_RAM_0E=256'h0000000000002466FF66240000000000000000000000FEC0C0C0000000000000;
+defparam ROM_ROM_0_0_s3.INIT_RAM_0F=256'h00000000001038387C7CFEFE000000000000000000FEFE7C7C38381000000000;
+defparam ROM_ROM_0_0_s3.INIT_RAM_10=256'h000000001818001818183C3C3C18000000000000000000000000000000000000;
+defparam ROM_ROM_0_0_s3.INIT_RAM_11=256'h000000006C6CFE6C6C6CFE6C6C00000000000000000000000000002466666600;
+defparam ROM_ROM_0_0_s3.INIT_RAM_12=256'h0000000086C66030180CC6C200000000000018187CC68606067CC0C2C67C1818;
+defparam ROM_ROM_0_0_s3.INIT_RAM_13=256'h000000000000000000000060303030000000000076CCCCCCDC76386C6C380000;
+defparam ROM_ROM_0_0_s3.INIT_RAM_14=256'h0000000030180C0C0C0C0C0C18300000000000000C18303030303030180C0000;
+defparam ROM_ROM_0_0_s3.INIT_RAM_15=256'h00000000000018187E18180000000000000000000000663CFF3C660000000000;
+defparam ROM_ROM_0_0_s3.INIT_RAM_16=256'h00000000000000007E0000000000000000000030181818000000000000000000;
+defparam ROM_ROM_0_0_s3.INIT_RAM_17=256'h0000000080C06030180C06020000000000000000181800000000000000000000;
+defparam ROM_ROM_0_0_s3.INIT_RAM_18=256'h000000007E1818181818187838180000000000007CC6C6E6F6DECEC6C67C0000;
+defparam ROM_ROM_0_0_s3.INIT_RAM_19=256'h000000007CC60606063C0606C67C000000000000FEC6C06030180C06C67C0000;
+defparam ROM_ROM_0_0_s3.INIT_RAM_1A=256'h000000007CC6060606FCC0C0C0FE0000000000001E0C0C0CFECC6C3C1C0C0000;
+defparam ROM_ROM_0_0_s3.INIT_RAM_1B=256'h0000000030303030180C0606C6FE0000000000007CC6C6C6C6FCC0C060380000;
+defparam ROM_ROM_0_0_s3.INIT_RAM_1C=256'h00000000780C0606067EC6C6C67C0000000000007CC6C6C6C67CC6C6C67C0000;
+defparam ROM_ROM_0_0_s3.INIT_RAM_1D=256'h0000000030181800000018180000000000000000001818000000181800000000;
+defparam ROM_ROM_0_0_s3.INIT_RAM_1E=256'h000000000000007E00007E000000000000000000060C18306030180C06000000;
+defparam ROM_ROM_0_0_s3.INIT_RAM_1F=256'h000000001818001818180CC6C67C0000000000006030180C060C183060000000;
+defparam ROM_ROM_0_0_s3.INIT_RAM_20=256'h00000000C6C6C6C6FEC6C66C38100000000000007CC0DCDEDEDEC6C6C67C0000;
+defparam ROM_ROM_0_0_s3.INIT_RAM_21=256'h000000003C66C2C0C0C0C0C2663C000000000000FC666666667C666666FC0000;
+defparam ROM_ROM_0_0_s3.INIT_RAM_22=256'h00000000FE6662606878686266FE000000000000F86C6666666666666CF80000;
+defparam ROM_ROM_0_0_s3.INIT_RAM_23=256'h000000003A66C6C6DEC0C0C2663C000000000000F06060606878686266FE0000;
+defparam ROM_ROM_0_0_s3.INIT_RAM_24=256'h000000003C18181818181818183C000000000000C6C6C6C6C6FEC6C6C6C60000;
+defparam ROM_ROM_0_0_s3.INIT_RAM_25=256'h00000000E666666C78786C6666E600000000000078CCCCCC0C0C0C0C0C1E0000;
+defparam ROM_ROM_0_0_s3.INIT_RAM_26=256'h00000000C3C3C3C3C3DBFFFFE7C3000000000000FE6662606060606060F00000;
+defparam ROM_ROM_0_0_s3.INIT_RAM_27=256'h000000007CC6C6C6C6C6C6C6C67C000000000000C6C6C6C6CEDEFEF6E6C60000;
+defparam ROM_ROM_0_0_s3.INIT_RAM_28=256'h00000E0C7CDED6C6C6C6C6C6C67C000000000000F0606060607C666666FC0000;
+defparam ROM_ROM_0_0_s3.INIT_RAM_29=256'h000000007CC6C6060C3860C6C67C000000000000E66666666C7C666666FC0000;
+defparam ROM_ROM_0_0_s3.INIT_RAM_2A=256'h000000007CC6C6C6C6C6C6C6C6C60000000000003C18181818181899DBFF0000;
+defparam ROM_ROM_0_0_s3.INIT_RAM_2B=256'h000000006666FFDBDBC3C3C3C3C3000000000000183C66C3C3C3C3C3C3C30000;
+defparam ROM_ROM_0_0_s3.INIT_RAM_2C=256'h000000003C181818183C66C3C3C3000000000000C3C3663C18183C66C3C30000;
+defparam ROM_ROM_0_0_s3.INIT_RAM_2D=256'h000000003C30303030303030303C000000000000FFC3C16030180C86C3FF0000;
+defparam ROM_ROM_0_0_s3.INIT_RAM_2E=256'h000000003C0C0C0C0C0C0C0C0C3C00000000000002060E1C3870E0C080000000;
+defparam ROM_ROM_0_0_s3.INIT_RAM_2F=256'h0000FF00000000000000000000000000000000000000000000000000C66C3810;
+defparam ROM_ROM_0_0_s3.INIT_RAM_30=256'h0000000076CCCCCC7C0C78000000000000000000000000000000000000183030;
+defparam ROM_ROM_0_0_s3.INIT_RAM_31=256'h000000007CC6C0C0C0C67C0000000000000000007C666666666C786060E00000;
+defparam ROM_ROM_0_0_s3.INIT_RAM_32=256'h000000007CC6C0C0FEC67C00000000000000000076CCCCCCCC6C3C0C0C1C0000;
+defparam ROM_ROM_0_0_s3.INIT_RAM_33=256'h0078CC0C7CCCCCCCCCCC76000000000000000000F060606060F060646C380000;
+defparam ROM_ROM_0_0_s3.INIT_RAM_34=256'h000000003C181818181838001818000000000000E666666666766C6060E00000;
+defparam ROM_ROM_0_0_s3.INIT_RAM_35=256'h00000000E6666C78786C666060E00000003C66660606060606060E0006060000;
+defparam ROM_ROM_0_0_s3.INIT_RAM_36=256'h00000000DBDBDBDBDBFFE60000000000000000003C1818181818181818380000;
+defparam ROM_ROM_0_0_s3.INIT_RAM_37=256'h000000007CC6C6C6C6C67C000000000000000000666666666666DC0000000000;
+defparam ROM_ROM_0_0_s3.INIT_RAM_38=256'h001E0C0C7CCCCCCCCCCC76000000000000F060607C6666666666DC0000000000;
+defparam ROM_ROM_0_0_s3.INIT_RAM_39=256'h000000007CC60C3860C67C000000000000000000F06060606676DC0000000000;
+defparam ROM_ROM_0_0_s3.INIT_RAM_3A=256'h0000000076CCCCCCCCCCCC0000000000000000001C3630303030FC3030100000;
+defparam ROM_ROM_0_0_s3.INIT_RAM_3B=256'h0000000066FFDBDBC3C3C3000000000000000000183C66C3C3C3C30000000000;
+defparam ROM_ROM_0_0_s3.INIT_RAM_3C=256'h00F80C067EC6C6C6C6C6C6000000000000000000C3663C183C66C30000000000;
+defparam ROM_ROM_0_0_s3.INIT_RAM_3D=256'h000000000E18181818701818180E000000000000FEC6603018CCFE0000000000;
+defparam ROM_ROM_0_0_s3.INIT_RAM_3E=256'h0000000070181818180E18181870000000000000181818181800181818180000;
+defparam ROM_ROM_0_0_s3.INIT_RAM_3F=256'h0000000000FEC6C6C66C381000000000000000000000000000000000DC760000;
+defparam ROM_ROM_0_0_s3.READ_MODE=1'b0;
+defparam ROM_ROM_0_0_s3.RESET_MODE="SYNC";
+  VCC VCC_cZ (
+    .V(VCC)
+);
+  GND GND_cZ (
+    .G(GND)
+);
+endmodule /* Font_Rom */
+module Pixel_On_Text_3 (
+  clk_d,
+  n327_11,
+  n326_11,
+  n325_9,
+  n324_14,
+  n323_11,
+  n322_11,
+  n321_9,
+  n540_13,
+  n537_10,
+  n542_7,
+  n542_10,
+  n542_8,
+  n542_6,
+  xCoord_d_0,
+  xCoord_d_1,
+  xCoord_d_2,
+  xCoord_d_3,
+  xCoord_d_4,
+  xCoord_d_5,
+  xCoord_d_6,
+  xCoord_d_7,
+  xCoord_d_8,
+  xCoord_d_11,
+  charCode_1_97,
+  charCode_4_124,
+  charCode_5_102,
+  charCode_6_105,
+  yCoord_d,
+  fontAddress,
+  fontAddress_19,
+  fontAddress_20,
+  fontAddress_21,
+  charCode_5_108,
+  charCode_6_117,
+  charCode_6_115,
+  d5,
+  n542_6_22,
+  charCode_23,
+  charBitInRow,
+  charBitInRow_24,
+  charBitInRow_25,
+  charBitInRow_26,
+  charCode_6_104,
+  charCode_6_110,
+  charCode_5_101
+)
+;
+input clk_d;
+input n327_11;
+input n326_11;
+input n325_9;
+input n324_14;
+input n323_11;
+input n322_11;
+input n321_9;
+input n540_13;
+input n537_10;
+input n542_7;
+input n542_10;
+input n542_8;
+input n542_6;
+input xCoord_d_0;
+input xCoord_d_1;
+input xCoord_d_2;
+input xCoord_d_3;
+input xCoord_d_4;
+input xCoord_d_5;
+input xCoord_d_6;
+input xCoord_d_7;
+input xCoord_d_8;
+input xCoord_d_11;
+input charCode_1_97;
+input charCode_4_124;
+input charCode_5_102;
+input charCode_6_105;
+input [0:0] yCoord_d;
+input [10:1] fontAddress;
+input [10:3] fontAddress_19;
+input [10:4] fontAddress_20;
+input [10:4] fontAddress_21;
+input charCode_5_108;
+input charCode_6_117;
+input charCode_6_115;
+output d5;
+output n542_6_22;
+output [6:5] charCode_23;
+output [7:0] charBitInRow;
+output [7:0] charBitInRow_24;
+output [7:0] charBitInRow_25;
+output [7:0] charBitInRow_26;
+output charCode_6_104;
+output charCode_6_110;
+output charCode_5_101;
+wire n541_20;
+wire n541_21;
+wire n541_22;
+wire n541_23;
+wire n542_4;
+wire charCode_6_102;
+wire charCode_6_103;
+wire charCode_5_96;
+wire charCode_5_97;
+wire charCode_4_113;
+wire charCode_4_114;
+wire charCode_3_106;
+wire charCode_3_107;
+wire charCode_2_102;
+wire charCode_2_103;
+wire charCode_1_94;
+wire charCode_1_95;
+wire charCode_0_116;
+wire charCode_0_117;
+wire n542_5;
+wire charCode_6_107;
+wire charCode_6_108;
+wire charCode_6_109;
+wire charCode_5_99;
+wire charCode_5_100;
+wire charCode_4_115;
+wire charCode_4_116;
+wire charCode_4_117;
+wire charCode_3_108;
+wire charCode_2_104;
+wire charCode_1_96;
+wire charCode_1_97_27;
+wire charCode_1_98;
+wire charCode_0_118;
+wire charCode_6_112;
+wire charCode_6_114;
+wire charCode_6_116;
+wire charCode_6_118;
+wire charCode_6_120;
+wire fontAddress_4_3;
+wire fontAddress_5_3;
+wire fontAddress_6_3;
+wire fontAddress_7_3;
+wire fontAddress_8_3;
+wire fontAddress_9_3;
+wire fontAddress_10_0_COUT;
+wire n541_25;
+wire n541_27;
+wire n541_29;
+wire [6:0] charCode_0;
+wire [10:4] fontAddress_0;
+wire [7:0] charBitInRow_0;
+wire VCC;
+wire GND;
+  LUT3 n541_s24 (
+    .F(n541_20),
+    .I0(charBitInRow_0[0]),
+    .I1(charBitInRow_0[1]),
+    .I2(xCoord_d_0) 
+);
+defparam n541_s24.INIT=8'hCA;
+  LUT3 n541_s25 (
+    .F(n541_21),
+    .I0(charBitInRow_0[2]),
+    .I1(charBitInRow_0[3]),
+    .I2(xCoord_d_0) 
+);
+defparam n541_s25.INIT=8'hCA;
+  LUT3 n541_s26 (
+    .F(n541_22),
+    .I0(charBitInRow_0[4]),
+    .I1(charBitInRow_0[5]),
+    .I2(xCoord_d_0) 
+);
+defparam n541_s26.INIT=8'hCA;
+  LUT3 n541_s27 (
+    .F(n541_23),
+    .I0(charBitInRow_0[6]),
+    .I1(charBitInRow_0[7]),
+    .I2(xCoord_d_0) 
+);
+defparam n541_s27.INIT=8'hCA;
+  LUT4 charCode_6_s79 (
+    .F(charCode_0[6]),
+    .I0(charCode_6_114),
+    .I1(charCode_23[6]),
+    .I2(charCode_6_102),
+    .I3(charCode_6_103) 
+);
+defparam charCode_6_s79.INIT=16'hF800;
+  LUT4 charCode_5_s77 (
+    .F(charCode_0[5]),
+    .I0(charCode_6_103),
+    .I1(charCode_5_96),
+    .I2(charCode_5_97),
+    .I3(charCode_23[5]) 
+);
+defparam charCode_5_s77.INIT=16'hCAC8;
+  LUT4 charCode_4_s86 (
+    .F(charCode_0[4]),
+    .I0(charCode_6_103),
+    .I1(charCode_4_113),
+    .I2(charCode_4_114),
+    .I3(charCode_5_97) 
+);
+defparam charCode_4_s86.INIT=16'hF088;
+  LUT4 charCode_3_s82 (
+    .F(charCode_0[3]),
+    .I0(charCode_6_103),
+    .I1(charCode_3_106),
+    .I2(charCode_3_107),
+    .I3(charCode_5_97) 
+);
+defparam charCode_3_s82.INIT=16'hF022;
+  LUT4 charCode_2_s80 (
+    .F(charCode_0[2]),
+    .I0(charCode_6_103),
+    .I1(charCode_2_102),
+    .I2(charCode_2_103),
+    .I3(charCode_5_97) 
+);
+defparam charCode_2_s80.INIT=16'h0F88;
+  LUT4 charCode_1_s76 (
+    .F(charCode_0[1]),
+    .I0(charCode_1_94),
+    .I1(charCode_2_103),
+    .I2(charCode_5_97),
+    .I3(charCode_1_95) 
+);
+defparam charCode_1_s76.INIT=16'h02F0;
+  LUT4 charCode_0_s87 (
+    .F(charCode_0[0]),
+    .I0(charCode_6_103),
+    .I1(charCode_0_116),
+    .I2(charCode_0_117),
+    .I3(charCode_5_97) 
+);
+defparam charCode_0_s87.INIT=16'h0F88;
+  LUT4 n542_s1 (
+    .F(n542_4),
+    .I0(xCoord_d_8),
+    .I1(n542_5),
+    .I2(n542_6_22),
+    .I3(n542_7) 
+);
+defparam n542_s1.INIT=16'h2FFF;
+  LUT3 charCode_6_s81 (
+    .F(charCode_23[6]),
+    .I0(charCode_6_120),
+    .I1(charCode_1_94),
+    .I2(charCode_6_107) 
+);
+defparam charCode_6_s81.INIT=8'h01;
+  LUT3 charCode_6_s82 (
+    .F(charCode_6_102),
+    .I0(charCode_6_108),
+    .I1(charCode_6_109),
+    .I2(charCode_5_97) 
+);
+defparam charCode_6_s82.INIT=8'h35;
+  LUT4 charCode_6_s83 (
+    .F(charCode_6_103),
+    .I0(n542_6_22),
+    .I1(charCode_6_110),
+    .I2(charCode_6_116),
+    .I3(xCoord_d_8) 
+);
+defparam charCode_6_s83.INIT=16'hB04F;
+  LUT4 charCode_5_s78 (
+    .F(charCode_5_96),
+    .I0(charCode_23[6]),
+    .I1(charCode_1_97),
+    .I2(charCode_5_99),
+    .I3(charCode_5_100) 
+);
+defparam charCode_5_s78.INIT=16'hF0EE;
+  LUT4 charCode_5_s79 (
+    .F(charCode_5_97),
+    .I0(charCode_6_110),
+    .I1(charCode_23[6]),
+    .I2(charCode_6_104),
+    .I3(charCode_6_118) 
+);
+defparam charCode_5_s79.INIT=16'hF10E;
+  LUT4 charCode_5_s80 (
+    .F(charCode_23[5]),
+    .I0(charCode_6_105),
+    .I1(charCode_5_102),
+    .I2(charCode_5_108),
+    .I3(charCode_5_101) 
+);
+defparam charCode_5_s80.INIT=16'hF1EF;
+  LUT4 charCode_4_s87 (
+    .F(charCode_4_113),
+    .I0(charCode_1_97),
+    .I1(charCode_4_115),
+    .I2(charCode_6_107),
+    .I3(charCode_1_94) 
+);
+defparam charCode_4_s87.INIT=16'h0EE0;
+  LUT3 charCode_4_s88 (
+    .F(charCode_4_114),
+    .I0(charCode_4_116),
+    .I1(charCode_4_117),
+    .I2(charCode_5_100) 
+);
+defparam charCode_4_s88.INIT=8'h35;
+  LUT4 charCode_3_s83 (
+    .F(charCode_3_106),
+    .I0(charCode_1_97),
+    .I1(charCode_1_94),
+    .I2(charCode_6_107),
+    .I3(charCode_4_115) 
+);
+defparam charCode_3_s83.INIT=16'hABB8;
+  LUT4 charCode_3_s84 (
+    .F(charCode_3_107),
+    .I0(charCode_5_100),
+    .I1(charCode_3_108),
+    .I2(charCode_1_94),
+    .I3(charCode_1_97) 
+);
+defparam charCode_3_s84.INIT=16'h3E88;
+  LUT4 charCode_2_s81 (
+    .F(charCode_2_102),
+    .I0(charCode_1_97),
+    .I1(charCode_1_94),
+    .I2(charCode_4_115),
+    .I3(charCode_6_107) 
+);
+defparam charCode_2_s81.INIT=16'h3AC5;
+  LUT4 charCode_2_s82 (
+    .F(charCode_2_103),
+    .I0(charCode_6_107),
+    .I1(charCode_2_104),
+    .I2(charCode_1_97),
+    .I3(charCode_5_100) 
+);
+defparam charCode_2_s82.INIT=16'hC17E;
+  LUT4 charCode_1_s77 (
+    .F(charCode_1_94),
+    .I0(n542_6_22),
+    .I1(charCode_1_96),
+    .I2(charCode_1_97_27),
+    .I3(xCoord_d_5) 
+);
+defparam charCode_1_s77.INIT=16'h0BF4;
+  LUT4 charCode_1_s78 (
+    .F(charCode_1_95),
+    .I0(charCode_6_103),
+    .I1(charCode_1_97),
+    .I2(charCode_1_98),
+    .I3(charCode_1_94) 
+);
+defparam charCode_1_s78.INIT=16'h9FF7;
+  LUT4 charCode_0_s88 (
+    .F(charCode_0_116),
+    .I0(charCode_1_97),
+    .I1(charCode_4_115),
+    .I2(charCode_6_107),
+    .I3(charCode_1_94) 
+);
+defparam charCode_0_s88.INIT=16'h7771;
+  LUT4 charCode_0_s89 (
+    .F(charCode_0_117),
+    .I0(charCode_4_115),
+    .I1(charCode_1_97),
+    .I2(charCode_6_107),
+    .I3(charCode_0_118) 
+);
+defparam charCode_0_s89.INIT=16'hC3BF;
+  LUT4 n542_s2 (
+    .F(n542_5),
+    .I0(xCoord_d_5),
+    .I1(charCode_1_97_27),
+    .I2(xCoord_d_6),
+    .I3(xCoord_d_7) 
+);
+defparam n542_s2.INIT=16'h001F;
+  LUT4 n542_s3 (
+    .F(n542_6_22),
+    .I0(charCode_1_97_27),
+    .I1(n542_10),
+    .I2(n542_8),
+    .I3(xCoord_d_11) 
+);
+defparam n542_s3.INIT=16'h00BF;
+  LUT3 charCode_6_s84 (
+    .F(charCode_6_104),
+    .I0(xCoord_d_5),
+    .I1(charCode_1_97_27),
+    .I2(xCoord_d_6) 
+);
+defparam charCode_6_s84.INIT=8'h1E;
+  LUT3 charCode_6_s87 (
+    .F(charCode_6_107),
+    .I0(charCode_6_117),
+    .I1(n542_6_22),
+    .I2(charCode_6_115) 
+);
+defparam charCode_6_s87.INIT=8'hE1;
+  LUT4 charCode_6_s88 (
+    .F(charCode_6_108),
+    .I0(charCode_6_107),
+    .I1(charCode_1_97),
+    .I2(charCode_4_115),
+    .I3(charCode_1_94) 
+);
+defparam charCode_6_s88.INIT=16'hA37D;
+  LUT4 charCode_6_s89 (
+    .F(charCode_6_109),
+    .I0(charCode_4_115),
+    .I1(charCode_6_107),
+    .I2(charCode_1_97),
+    .I3(charCode_1_94) 
+);
+defparam charCode_6_s89.INIT=16'h0007;
+  LUT3 charCode_6_s90 (
+    .F(charCode_6_110),
+    .I0(xCoord_d_5),
+    .I1(charCode_6_112),
+    .I2(xCoord_d_4) 
+);
+defparam charCode_6_s90.INIT=8'h10;
+  LUT4 charCode_5_s81 (
+    .F(charCode_5_99),
+    .I0(charCode_1_97),
+    .I1(charCode_6_107),
+    .I2(charCode_4_115),
+    .I3(charCode_1_94) 
+);
+defparam charCode_5_s81.INIT=16'h2FD6;
+  LUT3 charCode_5_s82 (
+    .F(charCode_5_100),
+    .I0(charCode_1_94),
+    .I1(charCode_6_114),
+    .I2(charCode_6_103) 
+);
+defparam charCode_5_s82.INIT=8'hB4;
+  LUT3 charCode_5_s83 (
+    .F(charCode_5_101),
+    .I0(n542_6),
+    .I1(xCoord_d_11),
+    .I2(charCode_4_124) 
+);
+defparam charCode_5_s83.INIT=8'h0E;
+  LUT3 charCode_4_s89 (
+    .F(charCode_4_115),
+    .I0(n542_6_22),
+    .I1(charCode_6_112),
+    .I2(charCode_6_120) 
+);
+defparam charCode_4_s89.INIT=8'hE1;
+  LUT4 charCode_4_s90 (
+    .F(charCode_4_116),
+    .I0(charCode_1_94),
+    .I1(charCode_6_107),
+    .I2(charCode_1_97),
+    .I3(charCode_4_115) 
+);
+defparam charCode_4_s90.INIT=16'hEF1E;
+  LUT4 charCode_4_s91 (
+    .F(charCode_4_117),
+    .I0(charCode_4_115),
+    .I1(charCode_1_94),
+    .I2(charCode_1_97),
+    .I3(charCode_6_107) 
+);
+defparam charCode_4_s91.INIT=16'h35D3;
+  LUT4 charCode_3_s85 (
+    .F(charCode_3_108),
+    .I0(charCode_6_107),
+    .I1(charCode_5_100),
+    .I2(charCode_4_115),
+    .I3(charCode_1_94) 
+);
+defparam charCode_3_s85.INIT=16'hA739;
+  LUT4 charCode_2_s83 (
+    .F(charCode_2_104),
+    .I0(charCode_6_107),
+    .I1(charCode_4_115),
+    .I2(charCode_1_94),
+    .I3(charCode_5_100) 
+);
+defparam charCode_2_s83.INIT=16'hE05C;
+  LUT2 charCode_1_s79 (
+    .F(charCode_1_96),
+    .I0(charCode_6_112),
+    .I1(xCoord_d_4) 
+);
+defparam charCode_1_s79.INIT=4'h4;
+  LUT4 charCode_1_s80 (
+    .F(charCode_1_97_27),
+    .I0(xCoord_d_1),
+    .I1(xCoord_d_2),
+    .I2(xCoord_d_4),
+    .I3(xCoord_d_3) 
+);
+defparam charCode_1_s80.INIT=16'h8000;
+  LUT3 charCode_1_s81 (
+    .F(charCode_1_98),
+    .I0(charCode_6_107),
+    .I1(charCode_6_103),
+    .I2(charCode_4_115) 
+);
+defparam charCode_1_s81.INIT=8'h82;
+  LUT4 charCode_0_s90 (
+    .F(charCode_0_118),
+    .I0(charCode_4_115),
+    .I1(charCode_6_103),
+    .I2(charCode_1_97),
+    .I3(charCode_1_94) 
+);
+defparam charCode_0_s90.INIT=16'hCCB4;
+  LUT4 charCode_6_s92 (
+    .F(charCode_6_112),
+    .I0(xCoord_d_0),
+    .I1(xCoord_d_1),
+    .I2(xCoord_d_2),
+    .I3(xCoord_d_3) 
+);
+defparam charCode_6_s92.INIT=16'hC07F;
+  LUT4 charCode_6_s93 (
+    .F(charCode_6_114),
+    .I0(xCoord_d_5),
+    .I1(charCode_1_97_27),
+    .I2(xCoord_d_6),
+    .I3(charCode_6_118) 
+);
+defparam charCode_6_s93.INIT=16'h00E1;
+  LUT4 charCode_6_s94 (
+    .F(charCode_6_116),
+    .I0(xCoord_d_7),
+    .I1(charCode_1_97_27),
+    .I2(xCoord_d_6),
+    .I3(xCoord_d_5) 
+);
+defparam charCode_6_s94.INIT=16'h0001;
+  LUT4 charCode_6_s95 (
+    .F(charCode_6_118),
+    .I0(charCode_1_97_27),
+    .I1(xCoord_d_6),
+    .I2(xCoord_d_5),
+    .I3(xCoord_d_7) 
+);
+defparam charCode_6_s95.INIT=16'h01FE;
+  LUT4 charCode_6_s96 (
+    .F(charCode_6_120),
+    .I0(xCoord_d_3),
+    .I1(xCoord_d_1),
+    .I2(xCoord_d_2),
+    .I3(xCoord_d_4) 
+);
+defparam charCode_6_s96.INIT=16'h807F;
+  DFFR pixel_s0 (
+    .Q(d5),
+    .D(n541_29),
+    .CLK(clk_d),
+    .RESET(n542_4) 
+);
+defparam pixel_s0.INIT=1'b0;
+  ALU fontAddress_4_s (
+    .SUM(fontAddress_0[4]),
+    .COUT(fontAddress_4_3),
+    .I0(charCode_0[0]),
+    .I1(n327_11),
+    .I3(GND),
+    .CIN(GND) 
+);
+defparam fontAddress_4_s.ALU_MODE=0;
+  ALU fontAddress_5_s (
+    .SUM(fontAddress_0[5]),
+    .COUT(fontAddress_5_3),
+    .I0(charCode_0[1]),
+    .I1(n326_11),
+    .I3(GND),
+    .CIN(fontAddress_4_3) 
+);
+defparam fontAddress_5_s.ALU_MODE=0;
+  ALU fontAddress_6_s (
+    .SUM(fontAddress_0[6]),
+    .COUT(fontAddress_6_3),
+    .I0(charCode_0[2]),
+    .I1(n325_9),
+    .I3(GND),
+    .CIN(fontAddress_5_3) 
+);
+defparam fontAddress_6_s.ALU_MODE=0;
+  ALU fontAddress_7_s (
+    .SUM(fontAddress_0[7]),
+    .COUT(fontAddress_7_3),
+    .I0(charCode_0[3]),
+    .I1(n324_14),
+    .I3(GND),
+    .CIN(fontAddress_6_3) 
+);
+defparam fontAddress_7_s.ALU_MODE=0;
+  ALU fontAddress_8_s (
+    .SUM(fontAddress_0[8]),
+    .COUT(fontAddress_8_3),
+    .I0(charCode_0[4]),
+    .I1(n323_11),
+    .I3(GND),
+    .CIN(fontAddress_7_3) 
+);
+defparam fontAddress_8_s.ALU_MODE=0;
+  ALU fontAddress_9_s (
+    .SUM(fontAddress_0[9]),
+    .COUT(fontAddress_9_3),
+    .I0(charCode_0[5]),
+    .I1(n322_11),
+    .I3(GND),
+    .CIN(fontAddress_8_3) 
+);
+defparam fontAddress_9_s.ALU_MODE=0;
+  ALU fontAddress_10_s (
+    .SUM(fontAddress_0[10]),
+    .COUT(fontAddress_10_0_COUT),
+    .I0(charCode_0[6]),
+    .I1(n321_9),
+    .I3(GND),
+    .CIN(fontAddress_9_3) 
+);
+defparam fontAddress_10_s.ALU_MODE=0;
+  MUX2_LUT5 n541_s22 (
+    .O(n541_25),
+    .I0(n541_20),
+    .I1(n541_21),
+    .S0(n540_13) 
+);
+  MUX2_LUT5 n541_s23 (
+    .O(n541_27),
+    .I0(n541_22),
+    .I1(n541_23),
+    .S0(n540_13) 
+);
+  MUX2_LUT6 n541_s21 (
+    .O(n541_29),
+    .I0(n541_25),
+    .I1(n541_27),
+    .S0(n537_10) 
+);
+  Font_Rom fontRom (
+    .clk_d(clk_d),
+    .yCoord_d(yCoord_d[0]),
+    .fontAddress(fontAddress[10:1]),
+    .fontAddress_11(fontAddress_19[10:3]),
+    .fontAddress_12(fontAddress_20[10:4]),
+    .fontAddress_13(fontAddress_21[10:4]),
+    .fontAddress_14(fontAddress_0[10:4]),
+    .charBitInRow(charBitInRow[7:0]),
+    .charBitInRow_15(charBitInRow_24[7:0]),
+    .charBitInRow_16(charBitInRow_25[7:0]),
+    .charBitInRow_17(charBitInRow_26[7:0]),
+    .charBitInRow_18(charBitInRow_0[7:0])
+);
+  VCC VCC_cZ (
+    .V(VCC)
+);
+  GND GND_cZ (
+    .G(GND)
+);
+endmodule /* Pixel_On_Text_3 */
+module wrapper (
+  clk,
+  xCoord,
+  yCoord,
+  pixOn
+)
+;
+input clk;
+input [11:0] xCoord;
+input [11:0] yCoord;
+output pixOn;
+wire clk_d;
+wire n2307_4;
+wire pixOn_d;
+wire d1;
+wire n327_9;
+wire n326_9;
+wire n325_11;
+wire n324_11;
+wire n323_11;
+wire n322_11;
+wire n321_9;
+wire n540_13;
+wire charCode_4_107;
+wire charCode_3_101;
+wire charCode_2_105;
+wire n544_6;
+wire n544_7;
+wire n544_8;
+wire charCode_1_88;
+wire charCode_1_89;
+wire charCode_6_92;
+wire charCode_6_93;
+wire charCode_5_100;
+wire charCode_5_102;
+wire charCode_5_104;
+wire charCode_4_109;
+wire charCode_4_111;
+wire charCode_0_114;
+wire n544_10;
+wire charCode_5_105;
+wire charCode_4_113;
+wire n544_11;
+wire charCode_4_115;
+wire n539_12;
+wire charCode_5_110;
+wire charCode_0_120;
+wire charCode_5_112;
+wire n327_13;
+wire n327_15;
+wire charCode_4_117;
+wire fontAddress_3_14;
+wire fontAddress_1_17;
+wire d2;
+wire d3;
+wire n325_11_28;
+wire charCode_6_100;
+wire charCode_4_118;
+wire charCode_3_106;
+wire charCode_1_95;
+wire charCode_5_96;
+wire charCode_3_109;
+wire charCode_3_110;
+wire charCode_3_111;
+wire d4;
+wire n325_9;
+wire n537_10;
+wire n326_11;
+wire n323_11_29;
+wire n322_11_30;
+wire n321_9_31;
+wire n542_6;
+wire n542_7;
+wire charCode_6_105;
+wire charCode_5_102_32;
+wire charCode_1_97;
+wire n542_8;
+wire n542_10;
+wire n324_14;
+wire charCode_4_124;
+wire charCode_6_115;
+wire charCode_6_117;
+wire charCode_5_108;
+wire n327_11;
+wire d5;
+wire charCode_6_101;
+wire charCode_5_98;
+wire n542_6_33;
+wire charCode_6_104;
+wire charCode_6_110;
+wire charCode_5_101;
+wire [11:0] xCoord_d;
+wire [11:0] yCoord_d;
+wire [10:2] fontAddress;
+wire [10:4] fontAddress_34;
+wire [10:4] fontAddress_35;
+wire [10:3] fontAddress_36;
+wire [7:0] charBitInRow;
+wire [7:0] charBitInRow_34;
+wire [7:0] charBitInRow_35;
+wire [7:0] charBitInRow_36;
+wire VCC;
+wire GND;
+  IBUF clk_ibuf (
+    .O(clk_d),
+    .I(clk) 
+);
+  IBUF xCoord_0_ibuf (
+    .O(xCoord_d[0]),
+    .I(xCoord[0]) 
+);
+  IBUF xCoord_1_ibuf (
+    .O(xCoord_d[1]),
+    .I(xCoord[1]) 
+);
+  IBUF xCoord_2_ibuf (
+    .O(xCoord_d[2]),
+    .I(xCoord[2]) 
+);
+  IBUF xCoord_3_ibuf (
+    .O(xCoord_d[3]),
+    .I(xCoord[3]) 
+);
+  IBUF xCoord_4_ibuf (
+    .O(xCoord_d[4]),
+    .I(xCoord[4]) 
+);
+  IBUF xCoord_5_ibuf (
+    .O(xCoord_d[5]),
+    .I(xCoord[5]) 
+);
+  IBUF xCoord_6_ibuf (
+    .O(xCoord_d[6]),
+    .I(xCoord[6]) 
+);
+  IBUF xCoord_7_ibuf (
+    .O(xCoord_d[7]),
+    .I(xCoord[7]) 
+);
+  IBUF xCoord_8_ibuf (
+    .O(xCoord_d[8]),
+    .I(xCoord[8]) 
+);
+  IBUF xCoord_9_ibuf (
+    .O(xCoord_d[9]),
+    .I(xCoord[9]) 
+);
+  IBUF xCoord_10_ibuf (
+    .O(xCoord_d[10]),
+    .I(xCoord[10]) 
+);
+  IBUF xCoord_11_ibuf (
+    .O(xCoord_d[11]),
+    .I(xCoord[11]) 
+);
+  IBUF yCoord_0_ibuf (
+    .O(yCoord_d[0]),
+    .I(yCoord[0]) 
+);
+  IBUF yCoord_1_ibuf (
+    .O(yCoord_d[1]),
+    .I(yCoord[1]) 
+);
+  IBUF yCoord_2_ibuf (
+    .O(yCoord_d[2]),
+    .I(yCoord[2]) 
+);
+  IBUF yCoord_3_ibuf (
+    .O(yCoord_d[3]),
+    .I(yCoord[3]) 
+);
+  IBUF yCoord_4_ibuf (
+    .O(yCoord_d[4]),
+    .I(yCoord[4]) 
+);
+  IBUF yCoord_5_ibuf (
+    .O(yCoord_d[5]),
+    .I(yCoord[5]) 
+);
+  IBUF yCoord_6_ibuf (
+    .O(yCoord_d[6]),
+    .I(yCoord[6]) 
+);
+  IBUF yCoord_7_ibuf (
+    .O(yCoord_d[7]),
+    .I(yCoord[7]) 
+);
+  IBUF yCoord_8_ibuf (
+    .O(yCoord_d[8]),
+    .I(yCoord[8]) 
+);
+  IBUF yCoord_9_ibuf (
+    .O(yCoord_d[9]),
+    .I(yCoord[9]) 
+);
+  IBUF yCoord_10_ibuf (
+    .O(yCoord_d[10]),
+    .I(yCoord[10]) 
+);
+  IBUF yCoord_11_ibuf (
+    .O(yCoord_d[11]),
+    .I(yCoord[11]) 
+);
+  OBUF pixOn_obuf (
+    .O(pixOn),
+    .I(pixOn_d) 
+);
+  LUT4 n2307_s0 (
+    .F(n2307_4),
+    .I0(d1),
+    .I1(d2),
+    .I2(d3),
+    .I3(d4) 
+);
+defparam n2307_s0.INIT=16'hFFFE;
+  DFFS pixOn_s2 (
+    .Q(pixOn_d),
+    .D(d5),
+    .CLK(clk_d),
+    .SET(n2307_4) 
+);
+  Pixel_On_Text textElement1 (
+    .clk_d(clk_d),
+    .n325_11(n325_11_28),
+    .n542_10(n542_10),
+    .charBitInRow(charBitInRow_35[7:0]),
+    .xCoord_d(xCoord_d[11:0]),
+    .yCoord_d(yCoord_d[11:1]),
+    .charCode_1_95(charCode_1_95),
+    .charCode_3_106(charCode_3_106),
+    .charCode_4_118(charCode_4_118),
+    .charCode_5_96(charCode_5_96),
+    .charCode_6_100(charCode_6_100),
+    .charCode_3_109(charCode_3_109),
+    .charCode_3_111(charCode_3_111),
+    .charCode_3_110(charCode_3_110),
+    .d1(d1),
+    .n327_9(n327_9),
+    .n326_9(n326_9),
+    .n325_11_0(n325_11),
+    .n324_11(n324_11),
+    .n323_11(n323_11),
+    .n322_11(n322_11),
+    .n321_9(n321_9),
+    .n540_13(n540_13),
+    .n544_6(n544_6),
+    .n544_7(n544_7),
+    .n544_8(n544_8),
+    .n544_10(n544_10),
+    .n544_11(n544_11),
+    .n539_12(n539_12),
+    .n327_13(n327_13),
+    .n327_15(n327_15),
+    .fontAddress({fontAddress[10:4],fontAddress_3_14,fontAddress[2],fontAddress_1_17}),
+    .charCode_1({charCode_6_92,charCode_5_100,charCode_4_107,charCode_3_101,charCode_2_105,charCode_1_88,charCode_0_114}),
+    .charCode_1_89(charCode_1_89),
+    .charCode_6_93(charCode_6_93),
+    .charCode_5_102(charCode_5_102),
+    .charCode_5_104(charCode_5_104),
+    .charCode_4_109(charCode_4_109),
+    .charCode_4_111(charCode_4_111),
+    .charCode_5_105(charCode_5_105),
+    .charCode_4_113(charCode_4_113),
+    .charCode_4_115(charCode_4_115),
+    .charCode_5_110(charCode_5_110),
+    .charCode_0_120(charCode_0_120),
+    .charCode_5_112(charCode_5_112),
+    .charCode_4_117(charCode_4_117)
+);
+  Pixel_On_Text_0 textElement2 (
+    .clk_d(clk_d),
+    .n327_9(n327_9),
+    .n326_9(n326_9),
+    .n325_11(n325_11),
+    .n324_11(n324_11),
+    .n323_11(n323_11),
+    .n322_11(n322_11),
+    .n321_9(n321_9),
+    .n544_7(n544_7),
+    .n544_6(n544_6),
+    .charBitInRow(charBitInRow_34[7:0]),
+    .xCoord_d(xCoord_d[11:0]),
+    .d2(d2),
+    .fontAddress(fontAddress_34[10:4])
+);
+  Pixel_On_Text_1 textElement3 (
+    .clk_d(clk_d),
+    .n540_13(n540_13),
+    .n539_12(n539_12),
+    .n544_8(n544_8),
+    .n327_13(n327_13),
+    .n327_15(n327_15),
+    .n544_6(n544_6),
+    .n542_10(n542_10),
+    .n544_11(n544_11),
+    .charBitInRow(charBitInRow_36[7:0]),
+    .xCoord_d_0(xCoord_d[0]),
+    .xCoord_d_1(xCoord_d[1]),
+    .xCoord_d_2(xCoord_d[2]),
+    .xCoord_d_3(xCoord_d[3]),
+    .xCoord_d_4(xCoord_d[4]),
+    .xCoord_d_5(xCoord_d[5]),
+    .xCoord_d_6(xCoord_d[6]),
+    .xCoord_d_7(xCoord_d[7]),
+    .xCoord_d_8(xCoord_d[8]),
+    .xCoord_d_11(xCoord_d[11]),
+    .charCode({charCode_6_92,charCode_5_112,charCode_4_115,charCode_3_101,charCode_2_105,charCode_1_89,charCode_0_120}),
+    .yCoord_d(yCoord_d[11:5]),
+    .charCode_5_110(charCode_5_110),
+    .charCode_5_100(charCode_5_100),
+    .charCode_4_111(charCode_4_111),
+    .charCode_1_88(charCode_1_88),
+    .charCode_4_117(charCode_4_117),
+    .charCode_6_93(charCode_6_93),
+    .charCode_4_107(charCode_4_107),
+    .charCode_5_104(charCode_5_104),
+    .charCode_0_114(charCode_0_114),
+    .charCode_5_105(charCode_5_105),
+    .charCode_4_109(charCode_4_109),
+    .charCode_4_113(charCode_4_113),
+    .charCode_5_102(charCode_5_102),
+    .d3(d3),
+    .n325_11(n325_11_28),
+    .fontAddress(fontAddress_35[10:4]),
+    .charCode_1_95(charCode_1_95),
+    .charCode_3_106(charCode_3_106),
+    .charCode_4_118(charCode_4_118),
+    .charCode_5_96(charCode_5_96),
+    .charCode_6_100(charCode_6_100),
+    .charCode_3_109(charCode_3_109),
+    .charCode_3_110(charCode_3_110),
+    .charCode_3_111(charCode_3_111)
+);
+  Pixel_On_Text_2 textElement4 (
+    .clk_d(clk_d),
+    .n540_13(n540_13),
+    .n544_6(n544_6),
+    .n544_10(n544_10),
+    .n542_6(n542_6_33),
+    .charBitInRow(charBitInRow[7:0]),
+    .xCoord_d(xCoord_d[11:0]),
+    .yCoord_d(yCoord_d[10:1]),
+    .charCode({charCode_6_101,charCode_5_101}),
+    .charCode_5_98(charCode_5_98),
+    .charCode_6_110(charCode_6_110),
+    .charCode_6_104(charCode_6_104),
+    .d4(d4),
+    .n325_9(n325_9),
+    .n537_10(n537_10),
+    .n326_11(n326_11),
+    .n323_11(n323_11_29),
+    .n322_11(n322_11_30),
+    .n321_9(n321_9_31),
+    .n542_6_7(n542_6),
+    .n542_7(n542_7),
+    .n542_8(n542_8),
+    .n542_10(n542_10),
+    .n324_14(n324_14),
+    .n327_11(n327_11),
+    .fontAddress(fontAddress_36[10:3]),
+    .charCode_1_97(charCode_1_97),
+    .charCode_4_124(charCode_4_124),
+    .charCode_5_102(charCode_5_102_32),
+    .charCode_6_105(charCode_6_105),
+    .charCode_6_115(charCode_6_115),
+    .charCode_6_117(charCode_6_117),
+    .charCode_5_108(charCode_5_108)
+);
+  Pixel_On_Text_3 textElement5 (
+    .clk_d(clk_d),
+    .n327_11(n327_11),
+    .n326_11(n326_11),
+    .n325_9(n325_9),
+    .n324_14(n324_14),
+    .n323_11(n323_11_29),
+    .n322_11(n322_11_30),
+    .n321_9(n321_9_31),
+    .n540_13(n540_13),
+    .n537_10(n537_10),
+    .n542_7(n542_7),
+    .n542_10(n542_10),
+    .n542_8(n542_8),
+    .n542_6(n542_6),
+    .xCoord_d_0(xCoord_d[0]),
+    .xCoord_d_1(xCoord_d[1]),
+    .xCoord_d_2(xCoord_d[2]),
+    .xCoord_d_3(xCoord_d[3]),
+    .xCoord_d_4(xCoord_d[4]),
+    .xCoord_d_5(xCoord_d[5]),
+    .xCoord_d_6(xCoord_d[6]),
+    .xCoord_d_7(xCoord_d[7]),
+    .xCoord_d_8(xCoord_d[8]),
+    .xCoord_d_11(xCoord_d[11]),
+    .charCode_1_97(charCode_1_97),
+    .charCode_4_124(charCode_4_124),
+    .charCode_5_102(charCode_5_102_32),
+    .charCode_6_105(charCode_6_105),
+    .yCoord_d(yCoord_d[0]),
+    .fontAddress({fontAddress[10:4],fontAddress_3_14,fontAddress[2],fontAddress_1_17}),
+    .fontAddress_19(fontAddress_36[10:3]),
+    .fontAddress_20(fontAddress_34[10:4]),
+    .fontAddress_21(fontAddress_35[10:4]),
+    .charCode_5_108(charCode_5_108),
+    .charCode_6_117(charCode_6_117),
+    .charCode_6_115(charCode_6_115),
+    .d5(d5),
+    .n542_6_22(n542_6_33),
+    .charCode_23({charCode_6_101,charCode_5_98}),
+    .charBitInRow(charBitInRow[7:0]),
+    .charBitInRow_24(charBitInRow_34[7:0]),
+    .charBitInRow_25(charBitInRow_35[7:0]),
+    .charBitInRow_26(charBitInRow_36[7:0]),
+    .charCode_6_104(charCode_6_104),
+    .charCode_6_110(charCode_6_110),
+    .charCode_5_101(charCode_5_101)
+);
+  VCC VCC_cZ (
+    .V(VCC)
+);
+  GND GND_cZ (
+    .G(GND)
+);
+  GSR GSR (
+    .GSRI(VCC) 
+);
+endmodule /* wrapper */

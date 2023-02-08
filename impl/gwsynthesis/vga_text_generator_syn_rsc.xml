@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Module name="wrapper" Register="1" Lut="1">
+    <SubModule name="textElement1" Register="1" Alu="7" Lut="78"/>
+    <SubModule name="textElement2" Register="1" Alu="7" Lut="56"/>
+    <SubModule name="textElement3" Register="1" Alu="7" Lut="51"/>
+    <SubModule name="textElement4" Register="1" Alu="7" Lut="82"/>
+    <SubModule name="textElement5" Register="1" Alu="7" Lut="52">
+        <SubModule name="fontRom" Bsram="5"/>
+    </SubModule>
+</Module>

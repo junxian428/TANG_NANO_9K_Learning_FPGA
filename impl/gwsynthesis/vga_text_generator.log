@@ -1,0 +1,50 @@
+GowinSynthesis start
+Running parser ...
+Analyzing VHDL file 'C:\Users\junxian428\Documents\vga_text_generator\src\commonPak.vhd'
+Analyzing package 'commonpak'("C:\Users\junxian428\Documents\vga_text_generator\src\commonPak.vhd":7)
+Analyzing package body 'commonpak'("C:\Users\junxian428\Documents\vga_text_generator\src\commonPak.vhd":71)
+Analyzing VHDL file 'C:\Users\junxian428\Documents\vga_text_generator\src\fontRom.vhd'
+Analyzing entity 'font_rom'("C:\Users\junxian428\Documents\vga_text_generator\src\fontRom.vhd":7)
+Analyzing architecture 'behavioral'("C:\Users\junxian428\Documents\vga_text_generator\src\fontRom.vhd":15)
+Analyzing VHDL file 'C:\Users\junxian428\Documents\vga_text_generator\src\pixelOnText.vhd'
+Analyzing entity 'pixel_on_text'("C:\Users\junxian428\Documents\vga_text_generator\src\pixelOnText.vhd":8)
+Analyzing architecture 'behavioral'("C:\Users\junxian428\Documents\vga_text_generator\src\pixelOnText.vhd":24)
+Analyzing VHDL file 'C:\Users\junxian428\Documents\vga_text_generator\src\wrapper.vhd'
+Analyzing entity 'wrapper'("C:\Users\junxian428\Documents\vga_text_generator\src\wrapper.vhd":7)
+Analyzing architecture 'behavioral'("C:\Users\junxian428\Documents\vga_text_generator\src\wrapper.vhd":16)
+Processing 'wrapper(Behavioral)'("C:\Users\junxian428\Documents\vga_text_generator\src\wrapper.vhd":7)
+Processing 'Pixel_On_Text(textlength=38)(Behavioral)'("C:\Users\junxian428\Documents\vga_text_generator\src\pixelOnText.vhd":8)
+Processing 'Font_Rom(Behavioral)'("C:\Users\junxian428\Documents\vga_text_generator\src\fontRom.vhd":7)
+Extracting RAM for identifier 'ROM'("C:\Users\junxian428\Documents\vga_text_generator\src\fontRom.vhd":20)
+Processing 'Pixel_On_Text(textlength=39)(Behavioral)'("C:\Users\junxian428\Documents\vga_text_generator\src\pixelOnText.vhd":8)
+Processing 'Pixel_On_Text(textlength=41)(Behavioral)'("C:\Users\junxian428\Documents\vga_text_generator\src\pixelOnText.vhd":8)
+Processing 'Pixel_On_Text(textlength=40)(Behavioral)'("C:\Users\junxian428\Documents\vga_text_generator\src\pixelOnText.vhd":8)
+NOTE  (EX0101) : Current top module is "wrapper"
+WARN  (EX0200) : Property "syn_romstyle" set invalid for "ROM"("C:\Users\junxian428\Documents\vga_text_generator\src\fontRom.vhd":20)
+WARN  (EX0200) : Property "syn_romstyle" set invalid for "ROM"("C:\Users\junxian428\Documents\vga_text_generator\src\fontRom.vhd":20)
+WARN  (EX0200) : Property "syn_romstyle" set invalid for "ROM"("C:\Users\junxian428\Documents\vga_text_generator\src\fontRom.vhd":20)
+WARN  (EX0200) : Property "syn_romstyle" set invalid for "ROM"("C:\Users\junxian428\Documents\vga_text_generator\src\fontRom.vhd":20)
+WARN  (EX0200) : Property "syn_romstyle" set invalid for "ROM"("C:\Users\junxian428\Documents\vga_text_generator\src\fontRom.vhd":20)
+[5%] Running netlist conversion ...
+Running device independent optimization ...
+[10%] Optimizing Phase 0 completed
+[15%] Optimizing Phase 1 completed
+[25%] Optimizing Phase 2 completed
+Running inference ...
+[30%] Inferring Phase 0 completed
+[40%] Inferring Phase 1 completed
+[50%] Inferring Phase 2 completed
+[55%] Inferring Phase 3 completed
+Running technical mapping ...
+[60%] Tech-Mapping Phase 0 completed
+[65%] Tech-Mapping Phase 1 completed
+[75%] Tech-Mapping Phase 2 completed
+[80%] Tech-Mapping Phase 3 completed
+[90%] Tech-Mapping Phase 4 completed
+WARN  (NL0002) : The module "Font_Rom" instantiated to "fontRom" is swept in optimizing("C:\Users\junxian428\Documents\vga_text_generator\src\pixelOnText.vhd":38)
+WARN  (NL0002) : The module "Font_Rom" instantiated to "fontRom" is swept in optimizing("C:\Users\junxian428\Documents\vga_text_generator\src\pixelOnText.vhd":38)
+WARN  (NL0002) : The module "Font_Rom" instantiated to "fontRom" is swept in optimizing("C:\Users\junxian428\Documents\vga_text_generator\src\pixelOnText.vhd":38)
+WARN  (NL0002) : The module "Font_Rom" instantiated to "fontRom" is swept in optimizing("C:\Users\junxian428\Documents\vga_text_generator\src\pixelOnText.vhd":38)
+[95%] Generate netlist file "C:\Users\junxian428\Documents\vga_text_generator\impl\gwsynthesis\vga_text_generator.vg" completed
+[100%] Generate report file "C:\Users\junxian428\Documents\vga_text_generator\impl\gwsynthesis\vga_text_generator_syn.rpt.html" completed
+GowinSynthesis finish
